@@ -1,0 +1,12 @@
+﻿@page "/JustinaPages/GroomerDetail/{groomerId:int}"
+<h3>GroomerDetails</h3>
+<div>
+    @groomerId
+</div>
+
+@code {
+[Parameter]
+    public int groomerId { get; set; }
+
+
+}

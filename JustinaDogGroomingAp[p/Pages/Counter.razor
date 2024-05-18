@@ -1,0 +1,47 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<div style="padding: 0 11%; align-items: center;">
+    <h1>Counter</h1>
+
+    @if (canIssueTicket)
+    {
+        <p style="color: red; font-weight: bold;">@feedBack</p>
+        //Buttons with a yes and no option
+        <div style="display:flex; margin:2px;">
+            <button class="btn btn-primary" @onclick="IncrementCount2" style="margin-right:4px;">Yes</button>
+            <button class="btn btn-primary" @onclick="() => canIssueTicket = false">No</button>
+        </div>
+    }
+
+
+    <p role="status" style="color:green;">Bus tickets: @currentCount</p>
+
+    <button class="btn btn-primary" @onclick="IncrementCount">Issue ticket</button>
+</div>
+
+@code {
+    private int currentCount = 0;
+    private string feedBack = "";
+    private bool canIssueTicket = false;
+
+    private void IncrementCount()
+    {
+        if(currentCount < 5)
+        {
+            currentCount++;
+        }
+        else
+        {
+            feedBack = "No more tickets for this participant. Do you want to Issue them an extra ticket?";
+            canIssueTicket = true;
+        }
+
+    }
+
+    private void IncrementCount2()
+    {
+        currentCount++;
+    }
+}

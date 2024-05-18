@@ -1,0 +1,13 @@
+
+h5[b-tcvvnves5o], h6[b-tcvvnves5o], h4[b-tcvvnves5o] {
+    color: darkgray;
+}
+
+.buttonBox[b-tcvvnves5o] {
+    display: flex;
+    justify-content: center;
+}
+
+.custom-button[b-tcvvnves5o] {
+    margin-right: 5px;
+}

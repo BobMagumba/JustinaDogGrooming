@@ -1,0 +1,327 @@
+﻿/* In your site.css or a custom CSS file */
+.light-gray-background {
+    background-color: orangered; /* Replace with your desired light gray color code */
+}
+
+.hover-effect {
+    background-color: #f0f0f0; /* Change the background color when hovered */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+}
+
+.container_flex {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.idContainer {
+    display: flex;
+}
+
+.green-text {
+    color: red;
+    font-weight: bold;
+}
+
+h2 {
+    /*text-align: center;*/
+    color: #333;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    width: 40%;
+}
+
+.btn-secondary {
+    background-color: #5a6268;
+    border: none;
+    width: 40%;
+}
+
+    .btn-secondary:hover {
+        background-color: #6c757d;
+        border: none;
+        width: 40%;
+    }
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border: none;
+    width: 40%;
+}
+
+.btn-primary, .btn-success {
+    margin-right: 10px;
+}
+
+.btn-success {
+    /*background-color: #28a745;*/
+    border: none;
+    width: 40%;
+}
+
+    .btn-success:hover {
+        background-color: #28a745;
+        border: none;
+        width: 40%;
+    }
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.flex, container_flex2 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.flex2 {
+    display: flex;
+}
+
+.modern-form {
+    font-family: 'Arial', sans-serif;
+    background: #f5f5f5; /* Update background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style input fields, labels, and buttons */
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #007bff; /* Primary button color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3; /* Darker color on hover */
+    }
+
+.btn-secondary {
+    background-color: #6c757d; /* Secondary button color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .btn-secondary:hover {
+        background-color: #545b62; /* Darker color on hover */
+    }
+
+
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #e1e1e1;
+    padding: 10px;
+    text-align: left;
+}
+
+.table td {
+font-size: 11px;
+}
+
+.table th {
+    background-color: #333;
+    color: #fff;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.center-spin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% of the viewport height */
+}
+
+.spinner {
+    width: 60px; /* Adjust the size of the spinner as needed */
+    height: 60px; /* Adjust the size of the spinner as needed */
+    border: 6px solid #ccc; /* You can change the color here */
+    border-top: 6px solid transparent;
+    border-radius: 60%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner-size {
+    font-size: 8rem;
+}
+
+.profile-area {
+    padding: 3rem 0;
+}
+
+.customer-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+    transition: .7s;
+    min-width: 200px;
+    min-height: 200px;
+
+
+
+}
+
+    .customer-card:hover {
+        border-color: darkcyan;
+        transition: .7s;
+    }
+
+customer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+   
+}
+
+.row {
+    /*padding top and buttom*/
+    padding: 3rem 12rem;
+}
+
+.card {
+    padding: 1rem;
+    /* background-color: #f5f5dc;*/
+    background-color: #f0f0f0;
+  /*  background: rgba(255, 253, 208, 0.3);*/
+    border-radius: 15px;
+    background: rgba(255, 253, 208, 0.3);
+}
+
+    .card:hover {
+        border-color: rgba(255, 253, 208, 0.3);
+        transition: .7s;
+        box-shadow: 0 1px 5px 0 rgba(255, 253, 208, 0.2);
+        cursor: pointer;
+    }
+
+
+.card-footer {
+    padding: 1rem;
+    background-color: #f0f0f0;
+    background: rgba(255, 253, 208, 0.3);
+}
+
+.customer-name {
+    /*color: #bb7b3e;*/
+    color: #ffffff;
+}
+
+.customer-details > li {
+    font-size: 0.7rem;
+    /*color: #bb7b3e;*/
+    color: #ffffff;
+}
+
+.page-header {
+    padding: 0 12rem;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.page-header > h1 {
+    display: flex;
+justify-content: center;
+}
+
+.customer-btn {
+    font-size: 1rem;
+}
+
+.customer-btn:first-child {
+    margin-right: 0.4rem;
+}
+
+/*.customer-details > li {
+    color: #333;
+}*/
+
+/*pagination centred*/
+
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}

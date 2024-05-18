@@ -1,0 +1,14 @@
+﻿.card-body {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+align-items: center;
+}
+
+.card-title {
+    color: black;
+}
+
+.btn-hover:hover {
+    background-color: #0056b3; 
+}

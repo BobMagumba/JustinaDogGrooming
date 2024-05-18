@@ -1,0 +1,31 @@
+﻿
+.rz-flex {
+    display: flex;
+    justify-content:center;
+  /*  padding: 0 10rem;
+    width: 100%;*/
+
+  padding:0 11%;
+    
+}
+
+.dogContainer {
+   /* display: flex;
+    flex-wrap: wrap;
+    width: 50%;*/
+   
+}
+
+
+h5, h6, h4 {
+    color:darkgray;
+}
+
+.custom-button {
+    margin-right: 5px;
+}
+
+.buttonBox {
+display:flex;
+    justify-content:center;
+}

@@ -1,0 +1,916 @@
+/* _content/JustinaDogGroomingAp[p/Pages/JustinaPages/AddADog.razor.rz.scp.css */
+
+h5[b-tcvvnves5o], h6[b-tcvvnves5o], h4[b-tcvvnves5o] {
+    color: darkgray;
+}
+
+.buttonBox[b-tcvvnves5o] {
+    display: flex;
+    justify-content: center;
+}
+
+.custom-button[b-tcvvnves5o] {
+    margin-right: 5px;
+}
+/* _content/JustinaDogGroomingAp[p/Pages/JustinaPages/AddCustomers.razor.rz.scp.css */
+/* In your site.css or a custom CSS file */
+.light-gray-background[b-l9k4dh250p] {
+    background-color: #f2f2f2; 
+}
+
+
+
+.container[b-l9k4dh250p] {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.idContainer[b-l9k4dh250p] {
+    display: flex;
+}
+
+.green-text[b-l9k4dh250p] {
+    color: green;
+}
+
+h2[b-l9k4dh250p] {
+    /*text-align: center;*/
+    color: #333;
+}
+
+label[b-l9k4dh250p] {
+    font-weight: bold;
+    color: #555;
+}
+
+.form-control[b-l9k4dh250p] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+
+}
+
+.btn-primary[b-l9k4dh250p] {
+    background-color: #007bff;
+    border: none;
+    width: 40%;
+}
+
+.btn-secondary[b-l9k4dh250p] {
+    background-color: #5a6268;
+    border: none;
+    width: 40%;
+}
+
+.btn-secondary:hover[b-l9k4dh250p] {
+    background-color: #6c757d;
+    border: none;
+    width: 40%;
+}
+
+.btn-primary:hover[b-l9k4dh250p] {
+    background-color: #0056b3;
+    border: none;
+    width: 40%;
+}
+
+.btn-primary[b-l9k4dh250p], .btn-success[b-l9k4dh250p] {
+    margin-right: 10px;
+}
+
+.btn-success[b-l9k4dh250p] {
+    /*background-color: #28a745;*/
+    border: none;
+    width: 40%;
+}
+.btn-success:hover[b-l9k4dh250p] {
+    background-color: #28a745;
+    border: none;
+    width: 40%;
+}
+
+.buttonContainer[b-l9k4dh250p] {
+    display: flex;
+    justify-content: center;
+}
+
+.flex[b-l9k4dh250p] {
+    display: flex;
+}
+
+.form-group[b-l9k4dh250p] {
+    width: 100%;
+}
+
+.flex2[b-l9k4dh250p] {
+    display: flex;
+   
+}
+/* _content/JustinaDogGroomingAp[p/Pages/JustinaPages/AllDogs.razor.rz.scp.css */
+.dog-container[b-g84ssm54jn] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+
+ 
+
+}
+
+.dogscontainer[b-g84ssm54jn] {
+    padding: 0 11%;
+}
+/*
+.dogCard:hover {
+     Add your hover styles here 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: orangered;
+}*/
+
+.rz-my-12:hover[b-g84ssm54jn] {
+    background-color: #f0f0f0; /* Change the background color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow on hover */
+    transform: scale(1.05); /* Scale the card on hover */
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; /* Add smooth transitions */
+}
+
+.flex-container[b-g84ssm54jn] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.paginationContainer[b-g84ssm54jn] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.setBackground[b-g84ssm54jn] {
+    border-radius: 15px;
+    background: rgba(255, 253, 208, 0.3);
+}
+/* _content/JustinaDogGroomingAp[p/Pages/JustinaPages/Appointments.razor.rz.scp.css */
+.groomerContainer[b-ebr1a1zjnr] {
+    padding: 3% 11%;
+}
+
+.groomingClass[b-ebr1a1zjnr] {
+    display: flex;
+    align-items:center;
+justify-content: center;
+margin-bottom: 2rem;
+}
+
+/* _content/JustinaDogGroomingAp[p/Pages/JustinaPages/CustomerDetails.razor.rz.scp.css */
+
+.rz-flex[b-qb0lwbg69e] {
+    display: flex;
+    justify-content:center;
+  /*  padding: 0 10rem;
+    width: 100%;*/
+
+  padding:0 11%;
+    
+}
+
+.dogContainer[b-qb0lwbg69e] {
+   /* display: flex;
+    flex-wrap: wrap;
+    width: 50%;*/
+   
+}
+
+
+h5[b-qb0lwbg69e], h6[b-qb0lwbg69e], h4[b-qb0lwbg69e] {
+    color:darkgray;
+}
+
+.custom-button[b-qb0lwbg69e] {
+    margin-right: 5px;
+}
+
+.buttonBox[b-qb0lwbg69e] {
+display:flex;
+    justify-content:center;
+}
+/* _content/JustinaDogGroomingAp[p/Pages/JustinaPages/DogDetails.razor.rz.scp.css */
+
+.rz-flex[b-0snmjnhxql] {
+    display: flex;
+    justify-content: center;
+    /*  padding: 0 10rem;
+    width: 100%;*/
+
+    padding: 0 11%;
+}
+
+
+
+.dogContainer[b-0snmjnhxql] {
+    /* display: flex;
+    flex-wrap: wrap;
+    width: 50%;*/
+}
+
+
+h5[b-0snmjnhxql], h6[b-0snmjnhxql], h4[b-0snmjnhxql] {
+    color: darkgray;
+}
+
+.custom-button[b-0snmjnhxql] {
+    margin-right: 5px;
+}
+
+.buttonBox[b-0snmjnhxql] {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-container[b-0snmjnhxql] {
+display: flex;
+justify-content: center;
+padding: 0 11%;
+margin-top: 4rem;
+margin-bottom: 1rem;
+}
+/* _content/JustinaDogGroomingAp[p/Pages/JustinaPages/Groomers.razor.rz.scp.css */
+.groomerContainer[b-m1g0111syl] {
+    padding: 3% 11%;
+}
+
+.groomingClass[b-m1g0111syl] {
+    display: flex;
+    align-items:center;
+justify-content: center;
+margin-bottom: 2rem;
+}
+/* _content/JustinaDogGroomingAp[p/Pages/JustinaPages/SearchCustomer.razor.rz.scp.css */
+/* In your site.css or a custom CSS file */
+.light-gray-background[b-00ji4oj8ey] {
+    background-color: orangered; /* Replace with your desired light gray color code */
+}
+
+.hover-effect[b-00ji4oj8ey] {
+    background-color: #f0f0f0; /* Change the background color when hovered */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+}
+
+.container_flex[b-00ji4oj8ey] {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.container[b-00ji4oj8ey] {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.idContainer[b-00ji4oj8ey] {
+    display: flex;
+}
+
+.green-text[b-00ji4oj8ey] {
+    color: red;
+    font-weight: bold;
+}
+
+h2[b-00ji4oj8ey] {
+    /*text-align: center;*/
+    color: #333;
+}
+
+label[b-00ji4oj8ey] {
+    font-weight: bold;
+    color: #555;
+}
+
+.form-control[b-00ji4oj8ey] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.btn-primary[b-00ji4oj8ey] {
+    background-color: #007bff;
+    border: none;
+    width: 40%;
+}
+
+.btn-secondary[b-00ji4oj8ey] {
+    background-color: #5a6268;
+    border: none;
+    width: 40%;
+}
+
+    .btn-secondary:hover[b-00ji4oj8ey] {
+        background-color: #6c757d;
+        border: none;
+        width: 40%;
+    }
+
+.btn-primary:hover[b-00ji4oj8ey] {
+    background-color: #0056b3;
+    border: none;
+    width: 40%;
+}
+
+.btn-primary[b-00ji4oj8ey], .btn-success[b-00ji4oj8ey] {
+    margin-right: 10px;
+}
+
+.btn-success[b-00ji4oj8ey] {
+    /*background-color: #28a745;*/
+    border: none;
+    width: 40%;
+}
+
+    .btn-success:hover[b-00ji4oj8ey] {
+        background-color: #28a745;
+        border: none;
+        width: 40%;
+    }
+
+.buttonContainer[b-00ji4oj8ey] {
+    display: flex;
+    justify-content: center;
+}
+
+.flex[b-00ji4oj8ey], container_flex2[b-00ji4oj8ey] {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form-group[b-00ji4oj8ey] {
+    width: 100%;
+}
+
+.flex2[b-00ji4oj8ey] {
+    display: flex;
+}
+
+.modern-form[b-00ji4oj8ey] {
+    font-family: 'Arial', sans-serif;
+    background: #f5f5f5; /* Update background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style input fields, labels, and buttons */
+.form-control[b-00ji4oj8ey] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+label[b-00ji4oj8ey] {
+    font-weight: bold;
+}
+
+.btn-primary[b-00ji4oj8ey] {
+    background-color: #007bff; /* Primary button color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .btn-primary:hover[b-00ji4oj8ey] {
+        background-color: #0056b3; /* Darker color on hover */
+    }
+
+.btn-secondary[b-00ji4oj8ey] {
+    background-color: #6c757d; /* Secondary button color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .btn-secondary:hover[b-00ji4oj8ey] {
+        background-color: #545b62; /* Darker color on hover */
+    }
+
+
+
+.table[b-00ji4oj8ey] {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+}
+
+.table th[b-00ji4oj8ey], .table td[b-00ji4oj8ey] {
+    border: 1px solid #e1e1e1;
+    padding: 10px;
+    text-align: left;
+}
+
+.table td[b-00ji4oj8ey] {
+font-size: 11px;
+}
+
+.table th[b-00ji4oj8ey] {
+    background-color: #333;
+    color: #fff;
+}
+
+.table tbody tr:nth-child(even)[b-00ji4oj8ey] {
+    background-color: #f2f2f2;
+}
+
+.table tbody tr:hover[b-00ji4oj8ey] {
+    background-color: #ddd;
+}
+
+.center-spin[b-00ji4oj8ey] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% of the viewport height */
+}
+
+.spinner[b-00ji4oj8ey] {
+    width: 60px; /* Adjust the size of the spinner as needed */
+    height: 60px; /* Adjust the size of the spinner as needed */
+    border: 6px solid #ccc; /* You can change the color here */
+    border-top: 6px solid transparent;
+    border-radius: 60%;
+    animation: spin-b-00ji4oj8ey 1s linear infinite;
+}
+
+@keyframes spin-b-00ji4oj8ey {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner-size[b-00ji4oj8ey] {
+    font-size: 8rem;
+}
+
+.profile-area[b-00ji4oj8ey] {
+    padding: 3rem 0;
+}
+
+.customer-card[b-00ji4oj8ey] {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+    transition: .7s;
+    min-width: 200px;
+    min-height: 200px;
+
+
+
+}
+
+    .customer-card:hover[b-00ji4oj8ey] {
+        border-color: darkcyan;
+        transition: .7s;
+    }
+
+customer-container[b-00ji4oj8ey] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+   
+}
+
+.row[b-00ji4oj8ey] {
+    /*padding top and buttom*/
+    padding: 3rem 12rem;
+}
+
+.card[b-00ji4oj8ey] {
+    padding: 1rem;
+    /* background-color: #f5f5dc;*/
+    background-color: #f0f0f0;
+  /*  background: rgba(255, 253, 208, 0.3);*/
+    border-radius: 15px;
+    background: rgba(255, 253, 208, 0.3);
+}
+
+    .card:hover[b-00ji4oj8ey] {
+        border-color: rgba(255, 253, 208, 0.3);
+        transition: .7s;
+        box-shadow: 0 1px 5px 0 rgba(255, 253, 208, 0.2);
+        cursor: pointer;
+    }
+
+
+.card-footer[b-00ji4oj8ey] {
+    padding: 1rem;
+    background-color: #f0f0f0;
+    background: rgba(255, 253, 208, 0.3);
+}
+
+.customer-name[b-00ji4oj8ey] {
+    /*color: #bb7b3e;*/
+    color: #ffffff;
+}
+
+.customer-details > li[b-00ji4oj8ey] {
+    font-size: 0.7rem;
+    /*color: #bb7b3e;*/
+    color: #ffffff;
+}
+
+.page-header[b-00ji4oj8ey] {
+    padding: 0 12rem;
+}
+
+.flex-container[b-00ji4oj8ey] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.page-header > h1[b-00ji4oj8ey] {
+    display: flex;
+justify-content: center;
+}
+
+.customer-btn[b-00ji4oj8ey] {
+    font-size: 1rem;
+}
+
+.customer-btn:first-child[b-00ji4oj8ey] {
+    margin-right: 0.4rem;
+}
+
+/*.customer-details > li {
+    color: #333;
+}*/
+
+/*pagination centred*/
+
+.paginationContainer[b-00ji4oj8ey] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+/* _content/JustinaDogGroomingAp[p/Pages/JustinaPages/ViewDogs.razor.rz.scp.css */
+.dogStack[b-l1mh5uut9e] {
+    width: 10%;
+}
+
+h5[b-l1mh5uut9e], h6[b-l1mh5uut9e], h4[b-l1mh5uut9e] {
+    color: darkgray;
+}
+
+.rz-my-12[b-l1mh5uut9e] {
+    display: flex;
+}
+
+.dogCard:hover[b-l1mh5uut9e] {
+    /* Add your hover styles here */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: orangered;
+}
+
+.customer-name[b-l1mh5uut9e] {
+    /*color: #bb7b3e;*/
+    color: #ffffff;
+}
+
+.customer-details > li[b-l1mh5uut9e] {
+    font-size: 0.7rem;
+    /*color: #bb7b3e;*/
+    color: #ffffff;
+}
+
+.page-header[b-l1mh5uut9e] {
+    padding: 0 12rem;
+}
+
+.flex-container[b-l1mh5uut9e] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.page-header > h1[b-l1mh5uut9e] {
+    display: flex;
+    justify-content: center;
+}
+
+.customer-btn[b-l1mh5uut9e] {
+    font-size: 1rem;
+}
+
+    .customer-btn:first-child[b-l1mh5uut9e] {
+        margin-right: 0.4rem;
+    }
+
+/*.customer-details > li {
+    color: #333;
+}*/
+
+/*pagination centred*/
+
+.paginationContainer[b-l1mh5uut9e] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+/* _content/JustinaDogGroomingAp[p/Pages/JustinaPages/ViewVaccine.razor.rz.scp.css */
+.dogStack[b-ydzrngxoh2] {
+    width: 10%;
+}
+
+h5[b-ydzrngxoh2], h6[b-ydzrngxoh2], h4[b-ydzrngxoh2] {
+    color: darkgray;
+}
+
+.rz-my-12[b-ydzrngxoh2] {
+    display: flex;
+}
+
+.dogCard:hover[b-ydzrngxoh2] {
+    /* Add your hover styles here */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: orangered;
+}
+/* _content/JustinaDogGroomingAp[p/Shared/FooterMenu.razor.rz.scp.css */
+a[b-5eeh9eyumu], p[b-5eeh9eyumu]{
+    color: #FFFFFF;
+}
+
+ a:hover[b-5eeh9eyumu] {
+        color: #DA9100;
+    }
+/* _content/JustinaDogGroomingAp[p/Shared/MainLayout.razor.rz.scp.css */
+.page[b-ngvs3rl4do] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-ngvs3rl4do] {
+    flex: 1;
+}
+
+.sidebar[b-ngvs3rl4do] {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+
+
+
+.top-row[b-ngvs3rl4do] {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-ngvs3rl4do]  a, .top-row .btn-link[b-ngvs3rl4do] {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+    }
+
+    .top-row a:first-child[b-ngvs3rl4do] {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row:not(.auth)[b-ngvs3rl4do] {
+        display: none;
+    }
+
+    .top-row.auth[b-ngvs3rl4do] {
+        justify-content: space-between;
+    }
+
+    .top-row a[b-ngvs3rl4do], .top-row .btn-link[b-ngvs3rl4do] {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-ngvs3rl4do] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-ngvs3rl4do] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-ngvs3rl4do] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row[b-ngvs3rl4do], article[b-ngvs3rl4do] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+
+
+
+
+.content > div[b-ngvs3rl4do] {
+    display: flex;
+    justify-content: flex-end;
+}
+/* _content/JustinaDogGroomingAp[p/Shared/NavMenu.razor.rz.scp.css */
+/*.navbar-toggler {
+    appearance: none;
+    cursor: pointer;
+    width: 3.5rem;
+    height: 2.5rem;
+    color: white;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") no-repeat center/1.75rem rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler:checked {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.top-row {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand {
+    font-size: 1.1rem;
+}
+
+.bi {
+    display: inline-block;
+    position: relative;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.75rem;
+    top: -1px;
+    background-size: cover;
+}
+
+.bi-house-door-fill-nav-menu {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-house-door-fill' viewBox='0 0 16 16'%3E%3Cpath d='M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z'/%3E%3C/svg%3E");
+}
+
+.bi-plus-square-fill-nav-menu {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-plus-square-fill' viewBox='0 0 16 16'%3E%3Cpath d='M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z'/%3E%3C/svg%3E");
+}
+
+.bi-list-nested-nav-menu {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-list-nested' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z'/%3E%3C/svg%3E");
+}
+
+.bi-lock-nav-menu {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-list-nested' viewBox='0 0 16 16'%3E%3Cpath d='M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z'/%3E%3C/svg%3E");
+}
+
+.bi-person-nav-menu {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-person' viewBox='0 0 16 16'%3E%3Cpath d='M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z'/%3E%3C/svg%3E");
+}
+
+.bi-person-badge-nav-menu {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-person-badge' viewBox='0 0 16 16'%3E%3Cpath d='M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z'/%3E%3Cpath d='M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z'/%3E%3C/svg%3E");
+}
+
+.bi-person-fill-nav-menu {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-person-fill' viewBox='0 0 16 16'%3E%3Cpath d='M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z'/%3E%3C/svg%3E");
+}
+
+.bi-arrow-bar-left-nav-menu {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-arrow-bar-left' viewBox='0 0 16 16'%3E%3Cpath d='M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z'/%3E%3C/svg%3E");
+}
+
+.nav-item {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item ::deep .nav-link {
+        color: #d7d7d7;
+        background: none;
+        border: none;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+        width: 100%;
+    }
+
+.nav-item ::deep a.active {
+    background-color: rgba(255,255,255,0.37);
+    color: white;
+}
+
+.nav-item ::deep .nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.nav-scrollable {
+    display: none;
+}
+
+.navbar-toggler:checked ~ .nav-scrollable {
+    display: block;
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler {
+        display: none;
+    }
+
+    .nav-scrollable {*/
+        /* Never collapse the sidebar for wide screens */
+        /*display: block;*/
+
+        /* Allow sidebar to scroll for tall menus */
+        /*height: calc(100vh - 3.5rem);
+        overflow-y: auto;
+    }
+}*/
+
+.navbar[b-idhvyp6dmt] {
+    padding: 0 10%;
+}
+
+h6:hover[b-idhvyp6dmt] {
+    color: #DA9100;
+}
+/* _content/JustinaDogGroomingAp[p/Shared/NotAuthorized.razor.rz.scp.css */
+.card-body[b-zrt4q70um7] {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+align-items: center;
+}
+
+.card-title[b-zrt4q70um7] {
+    color: black;
+}
+
+.btn-hover:hover[b-zrt4q70um7] {
+    background-color: #0056b3; 
+}

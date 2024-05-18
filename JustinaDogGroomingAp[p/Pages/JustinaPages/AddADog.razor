@@ -1,0 +1,219 @@
+﻿@* @page "/AddDog/{CustomerId:int}" *@
+@page "/AddDog"
+@using JustinaSystem.BLL
+@using JustinaSystem.ViewModels
+@using MatBlazor
+@inject IJSRuntime JSRuntime
+@inject JustinaServices _services
+@inject DogServices _dogServices
+@inject NavigationManager NavigationManager
+
+
+
+<div class="buttonBox"><h4 style="padding:1rem;">Add a dog</h4></div>
+@if (!string.IsNullOrEmpty(FeedBack))
+{
+    <div class="alert alert-danger" role="alert">
+        @FeedBack
+    </div>
+  }
+<div Class="rz-p-0 rz-p-md-12">
+    <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0.5rem" Class="rz-p-4 rz-mb-6 rz-border-radius-1" Style="border: var(--rz-grid-cell-border);">
+        <RadzenLabel Text="Variant:" />
+        <RadzenSelectBar @bind-Value="@variant" TextProperty="Text" ValueProperty="Value" Data="@(Enum.GetValues(typeof(Variant)).Cast<Variant>().Select(t => new { Text = $"{t}", Value = t }))" Size="ButtonSize.Small" Class="rz-display-none rz-display-xl-flex" />
+        <RadzenDropDown @bind-Value="@variant" TextProperty="Text" ValueProperty="Value" Data="@(Enum.GetValues(typeof(Variant)).Cast<Variant>().Select(t => new { Text = $"{t}", Value = t }))" Class="rz-display-inline-flex rz-display-xl-none" />
+    </RadzenStack>
+    <RadzenRow Gap="1rem">
+        <RadzenColumn Size="12" SizeSM="6">
+            <RadzenStack>
+                <RadzenFormField Text="CustomerID" Variant="@variant">
+                    <RadzenNumeric Disabled="true" @bind-Value="@customerId" />
+                </RadzenFormField>
+                <RadzenFormField Text="Dog name" Variant="@variant">
+                    <RadzenTextBox @bind-Value="@dogName" />
+                </RadzenFormField>
+                <RadzenFormField Text="Breed" Variant="@variant">
+                    <RadzenTextBox @bind-Value="@dogBreed" />
+                </RadzenFormField>
+                <RadzenFormField Text="DOB" Variant="@variant">
+                    <RadzenDatePicker TValue="DateTime?" Value=@date_of_birth Change="@(args => date_of_birth = args)" Name="RadzenDatePickerChangeEvent" />
+                </RadzenFormField>
+                <RadzenFormField Text="Sex" Variant="@variant">
+                    <RadzenDropDown @bind-Value=@sex Data=@Sexes Style="width: 100%; max-width: 400px;" Name="DropDownBindValue" />
+                </RadzenFormField>
+                <RadzenFormField Text="Vet" Variant="@variant">
+                    <RadzenTextBox @bind-Value="@vet" />
+                </RadzenFormField>
+                <RadzenFormField Text="Weight" Variant="@variant">
+                    <RadzenNumeric @bind-Value="@weight" />
+                </RadzenFormField>
+                <RadzenFormField Text="Color" Variant="@variant">
+                    <RadzenTextBox @bind-Value="@color" />
+                </RadzenFormField>
+
+            </RadzenStack>
+        </RadzenColumn>
+        <RadzenColumn Size="12" SizeSM="6">
+            <RadzenStack>
+                <RadzenFormField Text="Ok with other dogs?" Variant="@variant">
+                    <RadzenDropDown @bind-Value=@ok_with_other_dogs Data=@YesAndNo Style="width: 100%; max-width: 400px;" Name="DropDownBindValue" />
+                </RadzenFormField>
+                <RadzenFormField Text="Has allergies?" Variant="@variant">
+                    <RadzenDropDown @bind-Value=@has_allergies Data=@YesAndNo Style="width: 100%; max-width: 400px;" Name="DropDownBindValue" />
+                </RadzenFormField>
+                <RadzenFormField Text="On medication?" Variant="@variant">
+                    <RadzenDropDown @bind-Value=@on_medication Data=@YesAndNo Style="width: 100%; max-width: 400px;" Name="DropDownBindValue" />
+                </RadzenFormField>
+                <RadzenFormField Text="Take a picture?" Variant="@variant">
+                    <RadzenDropDown @bind-Value=@take_apik Data=@YesAndNo Style="width: 100%; max-width: 400px;" Name="DropDownBindValue" />
+                </RadzenFormField>
+                <RadzenFormField Text="Notes?" Variant="@variant">
+                    <RadzenTextArea @bind-Value=@notes Cols="60" Rows="5" class="w-100" aria-label="TextArea" />
+                </RadzenFormField>
+              
+            </RadzenStack>
+        </RadzenColumn>
+    </RadzenRow>
+
+</div>
+<div class="buttonBox">
+    <button type="submit" class="btn btn-success btn-lg active custom-button" @onclick="AddDogs">Save</button>
+    <button type="submit" class="btn btn-secondary btn-lg  active custom-button" @onclick="OnCancel">Cancel</button>
+</div>
+
+@code {
+    Variant variant = Variant.Outlined;
+    protected DogView dog = new DogView();
+    [Parameter]
+    public int customerId { get; set; }
+    [Parameter]
+    public EventCallback GetCustomer { get; set; }
+
+    public string dogName { get; set; }
+    public string dogBreed { get; set; }
+    public DateTime? date_of_birth { get; set; } = DateTime.Now;
+    public string sex { get; set; }
+    public string vet { get; set; }
+    public double? weight { get; set; }
+    public string color { get; set; }
+    public string ok_with_other_dogs { get; set; }
+    public string has_allergies { get; set; }
+    public string on_medication { get; set; }
+    public string take_apik { get; set; }
+    public string notes { get; set; }
+    private string FeedBack { get; set; } = default;
+    [Parameter] 
+    public Action OnCancel { get; set; }
+
+    public string[] Sexes { get; set; } = Array.Empty<string>();
+    public string[] YesAndNo { get; set; } = Array.Empty<string>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadSex();
+        await YesOrNo();
+    }
+
+    //Method to add a dog
+    private async Task AddDogs()
+    {
+
+        try
+        {
+            //Assign values to the dog object
+            dog.CustomerId = customerId;
+            dog.DogName = dogName;
+            dog.Breed = dogBreed;
+            dog.DateOfBirth = date_of_birth;
+            dog.Sex = sex;
+            dog.Vet = vet;
+            dog.Weight = (float)weight;
+            dog.Color = color;
+            dog.OkWithOtherDogs = ok_with_other_dogs;
+            dog.HasAllergies = has_allergies;
+            dog.OnMedication = on_medication;
+            dog.TakeApik = take_apik;
+            dog.Notes = notes;
+
+            //Add the dog
+            _dogServices.AddDog(dog);
+
+            //Invoke the GetCustomer method to refresh the customer detail page
+            await GetCustomer.InvokeAsync();
+
+            //Clear the fields
+            ClearFields();
+       
+            //Show feedback
+            await JSRuntime.InvokeVoidAsync("saveDog", dogName);
+
+            //Navigate to customer detail page to view customer with the added dog
+            
+
+
+        }
+        catch (AggregateException ex)
+        {
+            foreach (var error in ex.InnerExceptions)
+            {
+                FeedBack = error.Message;
+            }
+        }
+        catch (ArgumentNullException ex)
+        {
+            FeedBack = GetInnerException(ex).Message;
+        }
+        catch (Exception ex)
+        {
+            FeedBack = GetInnerException(ex).Message;
+        }
+    }
+
+    //Load sex dropdown
+    // Load Cities
+    private async Task LoadSex()
+    {
+        Sexes = await JSRuntime.InvokeAsync<string[]>("getSex");
+    }
+    //Loag yes /no dropdown
+    private async Task YesOrNo()
+    {
+        YesAndNo = await JSRuntime.InvokeAsync<string[]>("getYesOrNo");
+    }
+
+    //Clear fields
+    private void ClearFields()
+    {
+        dogName = string.Empty;
+        dogBreed = string.Empty;
+        date_of_birth = DateTime.Now;
+        sex = string.Empty;
+        vet = string.Empty;
+        weight = 0;
+        color = string.Empty;
+        ok_with_other_dogs = string.Empty;
+        has_allergies = string.Empty;
+        on_medication = string.Empty;
+        take_apik = string.Empty;
+        notes = string.Empty;
+
+    }
+
+    // Navigate to Add Customer
+    void NavigateToAddCustomer()
+    {
+        NavigationManager.NavigateTo($"/JustinaPages/CustomerDetail/{customerId}");
+    }
+
+
+    //get inner exception
+    #region Methods
+    private Exception GetInnerException(Exception ex)
+    {
+        while (ex.InnerException != null)
+            ex = ex.InnerException;
+        return ex;
+    }
+    #endregion
+
+}

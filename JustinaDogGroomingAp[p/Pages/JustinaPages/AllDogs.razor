@@ -1,0 +1,142 @@
+﻿@page "/Dogs"
+@* @attribute [StreamRendering(true)] *@
+@using JustinaSystem.BLL
+@using JustinaSystem.ViewModels
+@using MatBlazor
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+@inject DogServices _services
+
+
+<PageTitle>View Dogs</PageTitle>
+
+<div class="flex-container" style="margin-top:3rem; margin-bottom:1rem;">
+    <div class="customer-container" style="margin-right: 8px;">
+        <button class="customer-btn btn btn-outline-light btn-lg text-uppercase" onclick="@DaialogueToOpen">Add a dog</button>
+    </div>
+    <div class="customer-container">
+        <button class="customer-btn btn btn-outline-light btn-lg text-uppercase" onclick="@OpenSearchForm">Search dog</button>
+    </div>
+</div>
+
+<div class="dogscontainer">
+    <div>
+        @if (dogs == null || dogs.Count == 0)
+        {
+            <div class="d-flex align-items-center justify-content-center mt-5">
+                <h4><em>Loading...</em></h4>
+            </div>
+        }
+        else
+        {
+            <div class="dog-container">
+                @foreach (var dog in dogsList)
+                {
+                    <RadzenCard class="rz-my-6" style="border-radius: 15px; width: 32%; cursor: pointer; " @onclick="() => NavigateToDogDetail(dog.DogId)">
+                        @* <h6>Dog Information</h6> *@
+                        <div class="setBackground">
+                        <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start" Gap="1rem" Class="rz-p-4 dogStack ">
+                            <RadzenImage Path="/images/dog.webp" Style="max-width: 100px; height: auto; border-radius: 50%;" />
+                            <RadzenStack Gap="0">
+                                <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">Name</RadzenText>
+                                <RadzenText TextStyle="TextStyle.Body1"><b>@dog.DogName</b></RadzenText>
+                                <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Allergies</RadzenText>
+                                <RadzenText TextStyle="TextStyle.Body1"><b>@dog.HasAllergies</b></RadzenText>
+                                <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Owner</RadzenText>
+                                <RadzenText TextStyle="TextStyle.Body1"><b>@dog.Owner<span>(Id: @dog.CustomerId)</span></b></RadzenText>
+                            </RadzenStack>
+                        </RadzenStack>
+                        </div>
+                    </RadzenCard>
+                }
+            </div>
+            <div class="paginationContainer">
+                <button class="btn btn-dark" @onclick="@(e => NavigateTo("first"))">@("<<")</button>
+                <button class="btn btn-dark" @onclick="@(e => NavigateTo("prev"))" disabled="@(CurrentPage == 0)" style="margin-left: 5px;">Prev</button>
+                @for (int i = 0; i <= TotalPages; i++)
+                {
+                    var pageNumber = i;
+                    <button class="btn @(CurrentPage == pageNumber? "btn-dark":"btn-outline-secondary")" @onclick="@(e => UpdateList(pageNumber))" style="margin: 0 5px;">@(i + 1)</button>
+
+                }
+                <button class="btn btn-dark" @onclick="@(e => NavigateTo("next"))" disabled="@(CurrentPage == TotalPages)" style="margin: 0 5px;">Next</button>
+                <button class="btn btn-dark" @onclick="@(e => NavigateTo("last"))">@(">>")</button>
+
+            </div>
+        }
+    </div>
+</div>
+
+
+@code {
+    public int PageSize { get; set; }//for pagination
+    public int TotalPages { get; set; }//for pagination}
+    public int CurrentPage { get; set; }
+    public bool IsGridViewFiltred { get; set; }
+    protected List<DogView> dogs { get; set; } = new List<DogView>();
+    protected List<DogView> dogsList { get; set; } = new List<DogView>();
+    
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(1000);
+        // dogs = await _services.ViewAllDogs();
+        await ShowAllDogs();
+        await SearchDogForPagination();
+    }
+
+    private async Task ShowAllDogs()
+    {
+        dogs = await _services.ViewAllDogs();
+    }
+
+    private void NavigateToDogDetail(int dogId)
+    {
+        NavigationManager.NavigateTo($"JustinaPages/DogDetail/{dogId}");
+    }
+
+    private void OpenSearchForm()
+    {
+        NavigationManager.NavigateTo($"JustinaPages/SearchDogs");
+    }
+
+    private void DaialogueToOpen()
+    {
+        NavigationManager.NavigateTo($"JustinaPages/AddDog");
+    }
+
+    //Search Customer for pagination
+    private async Task SearchDogForPagination()
+    {
+        PageSize = 6;
+        dogsList = dogs.Take(PageSize).ToList();
+        TotalPages = (int)Math.Ceiling(dogs.Count / (double)PageSize);
+    }
+
+    private void UpdateList(int pageNumber)
+    {
+        dogsList = dogs.Skip(PageSize * pageNumber).Take(PageSize).ToList();
+        CurrentPage = pageNumber;
+    }
+
+    private void NavigateTo(string direction)
+    {
+        if (direction == "prev" && CurrentPage != 0)
+            CurrentPage -= 1;
+        if (direction == "next" && CurrentPage != TotalPages)
+            CurrentPage += 1;
+        if (direction == "first")
+            CurrentPage = 0;
+        if (direction == "last")
+            CurrentPage = TotalPages;
+        UpdateList(CurrentPage);
+    }
+
+    //Method to navigate to customer
+    private void NavigateToCustomerDetail(int customerId)
+    {
+        NavigationManager.NavigateTo($"/JustinaPages/CustomerDetail/{customerId}");
+    }
+
+}

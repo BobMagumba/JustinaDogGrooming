@@ -1,0 +1,99 @@
+﻿@* @page "/ViewDogs/{CustomerId:int}" *@
+@page "/ViewVaccines"
+@using JustinaSystem.BLL
+@using JustinaSystem.ViewModels
+@using MatBlazor
+@inject IJSRuntime JSRuntime
+@inject JustinaServices _services
+@inject DogServices _dogServices
+@inject NavigationManager NavigationManager
+
+@* @foreach (var dog in dogs)
+{
+    <div class="dogContainer">
+
+        <div class="dogCard">
+            <RadzenCard class="rz-my-12" style="border-radius: 15px; width: 100%;" @onclick="() => NavigateToDogDetail(dog.DogId)">
+                <h6>Dog Vaccine</h6>
+                <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start" Gap="1rem" Class="rz-p-4 dogStack">
+                    <RadzenStack Gap="0">
+                        <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">Name</RadzenText>
+                        <RadzenText TextStyle="TextStyle.Body1"><b>Tick Bite</b></RadzenText>
+                        <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Start Date</RadzenText>
+                        <RadzenText TextStyle="TextStyle.Body1"><b>2023-12-12</b></RadzenText>
+                        <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Start Date</RadzenText>
+                        <RadzenText TextStyle="TextStyle.Body1"><b>2024-Jan-19</b></RadzenText>
+                    </RadzenStack>
+                </RadzenStack>
+            </RadzenCard>
+        </div>
+    </div>
+}
+ *@
+
+
+<div class="dogContainer">
+    @*  <RadzenCard class="rz-my-12" style="flex-grow: 1; border-radius: 15px; width: 100%;"> *@
+    <div class="dogCard">
+        <RadzenCard class="rz-my-12" style="border-radius: 15px; width: 100%;" @onclick="NavigateToMessage">
+            <h6>Dog Vaccine</h6>
+            <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start" Gap="1rem" Class="rz-p-4 dogStack">
+                <RadzenStack Gap="0">
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">Name</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1"><b>Tick Bite</b></RadzenText>
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Start Date</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1"><b>2023-12-12</b></RadzenText>
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Start Date</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1"><b>2024-Jan-19</b></RadzenText>
+                </RadzenStack>
+            </RadzenStack>
+        </RadzenCard>
+    </div>
+</div>
+<div class="dogContainer">
+    @*  <RadzenCard class="rz-my-12" style="flex-grow: 1; border-radius: 15px; width: 100%;"> *@
+    <div class="dogCard">
+        <RadzenCard class="rz-my-12" style="border-radius: 15px; width: 100%;">
+            <h6>Dog Vaccine</h6>
+            <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start" Gap="1rem" Class="rz-p-4 dogStack">
+                <RadzenStack Gap="0">
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">Name</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1"><b>Tick Bite</b></RadzenText>
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Start Date</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1"><b>2023-12-12</b></RadzenText>
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">End Date</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1"><b>2024-Jan-19</b></RadzenText>
+                </RadzenStack>
+            </RadzenStack>
+        </RadzenCard>
+    </div>
+</div>
+
+
+@code {
+    Variant variant = Variant.Outlined;
+    protected List<DogView> dogs = new List<DogView>();
+    [Parameter]
+    public int customerId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetDogs();
+    }
+
+    private async Task GetDogs()
+    {
+        dogs = _dogServices.ViewDogs(customerId);
+    }
+
+    private void NavigateToDogDetail(int dogId)
+    {
+        NavigationManager.NavigateTo($"JustinaPages/DogDetail/{dogId}");
+    }
+
+    private void NavigateToMessage()
+    {
+        NavigationManager.NavigateTo($"/Message");
+    }
+
+}

@@ -1,0 +1,13 @@
+﻿
+h5, h6, h4 {
+    color: darkgray;
+}
+
+.buttonBox {
+    display: flex;
+    justify-content: center;
+}
+
+.custom-button {
+    margin-right: 5px;
+}

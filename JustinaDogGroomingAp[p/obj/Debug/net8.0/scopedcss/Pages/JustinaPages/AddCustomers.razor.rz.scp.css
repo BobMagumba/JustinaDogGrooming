@@ -1,0 +1,97 @@
+/* In your site.css or a custom CSS file */
+.light-gray-background[b-l9k4dh250p] {
+    background-color: #f2f2f2; 
+}
+
+
+
+.container[b-l9k4dh250p] {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.idContainer[b-l9k4dh250p] {
+    display: flex;
+}
+
+.green-text[b-l9k4dh250p] {
+    color: green;
+}
+
+h2[b-l9k4dh250p] {
+    /*text-align: center;*/
+    color: #333;
+}
+
+label[b-l9k4dh250p] {
+    font-weight: bold;
+    color: #555;
+}
+
+.form-control[b-l9k4dh250p] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+
+}
+
+.btn-primary[b-l9k4dh250p] {
+    background-color: #007bff;
+    border: none;
+    width: 40%;
+}
+
+.btn-secondary[b-l9k4dh250p] {
+    background-color: #5a6268;
+    border: none;
+    width: 40%;
+}
+
+.btn-secondary:hover[b-l9k4dh250p] {
+    background-color: #6c757d;
+    border: none;
+    width: 40%;
+}
+
+.btn-primary:hover[b-l9k4dh250p] {
+    background-color: #0056b3;
+    border: none;
+    width: 40%;
+}
+
+.btn-primary[b-l9k4dh250p], .btn-success[b-l9k4dh250p] {
+    margin-right: 10px;
+}
+
+.btn-success[b-l9k4dh250p] {
+    /*background-color: #28a745;*/
+    border: none;
+    width: 40%;
+}
+.btn-success:hover[b-l9k4dh250p] {
+    background-color: #28a745;
+    border: none;
+    width: 40%;
+}
+
+.buttonContainer[b-l9k4dh250p] {
+    display: flex;
+    justify-content: center;
+}
+
+.flex[b-l9k4dh250p] {
+    display: flex;
+}
+
+.form-group[b-l9k4dh250p] {
+    width: 100%;
+}
+
+.flex2[b-l9k4dh250p] {
+    display: flex;
+   
+}

@@ -1,0 +1,265 @@
+﻿@page "/JustinaPages/AddCustomers"
+@using JustinaSystem.BLL
+@using JustinaSystem.ViewModels
+@using MatBlazor
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Customers</PageTitle>
+     
+   @if (!string.IsNullOrEmpty(FeedBack))
+    {
+        <MatDialog @bind-IsOpen="@dialogIsOpen">
+            <MatDialogContent>
+                <div class="alert alert-danger" role="alert">
+                    @FeedBack
+                </div>
+            <div class="close-button-container">
+                <button type="button" class="close-button" @onclick="CloseFeedBack" style="color: red; float: right;">X</button>
+            </div>
+            </MatDialogContent>
+        </MatDialog>
+        
+    }
+
+    <EditForm Model="@customer" OnValidSubmit="@AddCustomer" class="light-gray-background">
+            <DataAnnotationsValidator />
+        <div class="close-button-container">
+        <button type="button" class="close-button" @onclick="CloseForm" style="color: red; float: right;">X</button>
+        </div>
+        <div class="container">
+            <h3 style="color:black;">Add Customer</h3>
+       
+            <div class="flex">
+                <div class="form-group">
+                    <label for="FirstName">First Name</label>
+                    <input type="text" class="form-control" id="FirstName" placeholder="Enter first name" @bind="customer.FirstName">
+                    <ValidationMessage For="@(() => customer.FirstName)" />
+                </div>
+                <div class="form-group">
+                    <label for="LastName">Last Name</label>
+                    <input type="text" class="form-control" id="LastName" placeholder="Enter last name" @bind="customer.LastName">
+                    <ValidationMessage For="@(() => customer.LastName)" />
+                </div>
+       
+            </div>
+            <div class="flex">
+                <div class="form-group">
+                    <label for="EmailAddress">Email</label>
+                    <input type="email" class="form-control" id="EmailAddress" placeholder="Enter email" @bind="customer.EmailAddress">
+                    <ValidationMessage For="@(() => customer.EmailAddress)" />
+                </div>
+                <div class="form-group">
+                    <label for="EnrollmentDate">Enrollment Date</label>
+                    <input type="date" class="form-control" id="EnrollmentDate" @bind="customer.EnrollmentDate">
+                    <ValidationMessage For="@(() => customer.EnrollmentDate)" />
+                </div>
+            </div>
+            <div class="flex">
+                <div class="form-group">
+                    <label for="Referral">Referral source</label>
+                    <select class="form-select form-control col-3" @bind="customer.Referral">
+                        <option value="">Referral source...</option>
+                        @foreach (var referral in Refferals)
+                        {
+                            <option value="@referral">@referral</option>
+                        }
+                    </select>
+
+                    <ValidationMessage For="@(() => customer.Referral)" />
+
+                </div>
+
+                <div class="form-group">
+                    <label for="Zip">Postal Code</label>
+                    <input type="text" class="form-control" id="Zip" placeholder="Enter postal code" @bind="customer.Zip">
+                </div>
+            </div>
+
+            <div class="flex2">
+                <div class="form-group">
+                    <label for="Address">Address</label>
+                    <input type="text" class="form-control" id="Address" placeholder="Enter address" @bind="customer.Address">
+                    <ValidationMessage For="@(() => customer.Address)" />
+                </div>
+                <div class="form-group">
+                    <label for="City">City</label>
+                    <select class="form-select form-control col-3" @oninput="GetState" @bind="customer.City">
+                        <option value="">City...</option>
+                        @foreach (var city in Cities)
+                        {
+                            <option value="@city">@city</option>
+                        }
+                    </select>
+                <ValidationMessage For="@(() => customer.City)" />
+                </div>
+                <div class="form-group">
+                    <label for="State">Province</label>
+                    <input type="text" class="form-control" id="State" placeholder="Enter province" @bind="customer.State">
+                    @* <input type="text" class="form-control" id="State" placeholder="State" value="@customer.State" disabled> *@
+                    <ValidationMessage For="@(() => customer.State)" /> 
+
+                </div>
+            </div>
+        
+                <div class="form-group">
+                    <label for="PhoneNumber1">Phone Number 1</label>
+                    <input type="text" class="form-control" id="PhoneNumber1" placeholder="Enter phone number 1" @bind="customer.PhoneNumber1">
+                    <ValidationMessage For="@(() => customer.PhoneNumber1)" />
+                </div>
+                <div class="form-group">
+                    <label for="PhoneNumber2">Phone Number 2</label>
+                    <input type="text" class="form-control" id="PhoneNumber2" placeholder="Enter phone number 2" @bind="customer.PhoneNumber2">
+                    <ValidationMessage For="@(() => customer.PhoneNumber2)" />
+                </div>
+                <div class="form-group">
+                    <label for="PhoneNumber3">Phone Number 3</label>
+                    <input type="text" class="form-control" id="PhoneNumber3" placeholder="Enter phone number 3" @bind="customer.PhoneNumber3">
+                </div>
+        
+
+            <div class="form-group">
+                <label for="Notes">Notes</label>
+                <textarea class="form-control" id="Notes" rows="4" placeholder="Enter notes" @bind="customer.Notes"></textarea>
+            </div>
+
+            <div class="buttonContainer">
+                <button type="submit" class="btn btn-success" @onclick="AddCustomer">Submit</button>
+                <button type="reset" class="btn btn-secondary" @onclick="ClearFields">Clear</button>
+            </div>
+    </div>
+
+</EditForm>
+
+
+@code {
+
+    public string[] Refferals { get; set; } = Array.Empty<string>();
+    public string[] Cities { get; set; } = Array.Empty<string>();
+    public string? State { get; set; }
+    private string FeedBack { get; set; } = string.Empty;
+    protected CustomerView customer { get; set; } = new CustomerView();
+    private bool dialogIsOpen { get; set; } = true;
+    
+    [Parameter]
+    public EventCallback DialogueToAddCustomer { get; set; }
+   
+    [Inject]
+    protected JustinaServices? justinaServices { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadReferrals();
+        await LoadCities();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+     
+            await LoadReferrals();
+            await LoadCities();
+
+       
+      
+    }
+
+    // Load Referrals
+    private async Task LoadReferrals()
+    {
+        Refferals = await JSRuntime.InvokeAsync<string[]>("getReferralSource");
+
+    }
+
+    // Load Cities
+    private async Task LoadCities()
+    {
+        Cities = await JSRuntime.InvokeAsync<string[]>("getCanadianCities");
+
+        //Get State of the City after the City is selected
+         await GetState();
+         
+    }
+
+    //Get state of the City
+    private async Task GetState()
+    {
+        State = await JSRuntime.InvokeAsync<string>("getProvinces", customer.City);
+    }
+
+
+
+    // Add Customer
+    private async Task AddCustomer()
+    {
+
+        try
+        {
+            justinaServices.AddCustomer(customer);
+            
+            //Message to confirm customer was added
+            var firstName = customer.FirstName;
+            var lastName = customer.LastName;
+            await JSRuntime.InvokeVoidAsync("saveCustomer",firstName, lastName);
+            //Set FeedBack to empty string
+           // FeedBack = string.Empty;
+            customer = new CustomerView();
+            await LoadReferrals();
+
+            //Triggers the DialogueToAddCustomer EventCallback to notify the parent component that the customer was added
+            await DialogueToAddCustomer.InvokeAsync();
+
+
+          
+
+
+
+        }
+        catch (AggregateException ex)
+        {
+            foreach (var error in ex.InnerExceptions)
+            {
+                FeedBack = error.Message;
+            }
+        }
+        catch (ArgumentNullException ex)
+        {
+            FeedBack = GetInnerException(ex).Message;
+        }
+        catch (Exception ex)
+        {
+            FeedBack = GetInnerException(ex).Message;
+        }
+
+    }
+
+    //Close form when I click X
+    private async Task CloseForm()
+    {
+        await DialogueToAddCustomer.InvokeAsync();
+    }
+
+    //close feedbacl dialogue
+private void CloseFeedBack()
+    {
+        dialogIsOpen = false;
+    }
+
+    //clear fields
+    private void ClearFields()
+    {
+        customer = new CustomerView();
+        FeedBack = string.Empty;
+        //Refresh page after the fields are cleared
+        
+
+
+    }
+     //get inner exception
+    #region Methods
+    private Exception GetInnerException(Exception ex)
+    {
+        while (ex.InnerException != null)
+            ex = ex.InnerException;
+        return ex;
+    }
+    #endregion
+}

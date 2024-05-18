@@ -1,0 +1,68 @@
+.dogStack[b-l1mh5uut9e] {
+    width: 10%;
+}
+
+h5[b-l1mh5uut9e], h6[b-l1mh5uut9e], h4[b-l1mh5uut9e] {
+    color: darkgray;
+}
+
+.rz-my-12[b-l1mh5uut9e] {
+    display: flex;
+}
+
+.dogCard:hover[b-l1mh5uut9e] {
+    /* Add your hover styles here */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: orangered;
+}
+
+.customer-name[b-l1mh5uut9e] {
+    /*color: #bb7b3e;*/
+    color: #ffffff;
+}
+
+.customer-details > li[b-l1mh5uut9e] {
+    font-size: 0.7rem;
+    /*color: #bb7b3e;*/
+    color: #ffffff;
+}
+
+.page-header[b-l1mh5uut9e] {
+    padding: 0 12rem;
+}
+
+.flex-container[b-l1mh5uut9e] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.page-header > h1[b-l1mh5uut9e] {
+    display: flex;
+    justify-content: center;
+}
+
+.customer-btn[b-l1mh5uut9e] {
+    font-size: 1rem;
+}
+
+    .customer-btn:first-child[b-l1mh5uut9e] {
+        margin-right: 0.4rem;
+    }
+
+/*.customer-details > li {
+    color: #333;
+}*/
+
+/*pagination centred*/
+
+.paginationContainer[b-l1mh5uut9e] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

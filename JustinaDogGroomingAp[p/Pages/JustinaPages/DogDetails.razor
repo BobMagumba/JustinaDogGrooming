@@ -1,0 +1,243 @@
+﻿@* @page "/JustinaPages/DogDetail/{DogId:int}" *@
+@page "/JustinaPages/DogDetail/{dogId:int}"
+@using JustinaSystem.BLL
+@using JustinaSystem.ViewModels
+@using MatBlazor
+@inject DogServices _services
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+
+
+<div class="buttonImage">
+    <div class="flex-container" style="margin-top:4rem;">
+        <div class="customer-container" style="margin-right:0.5rem;">
+            <button class="customer-btn btn btn-outline-light btn-lg" onclick="@@dog.DogName">Upload pictures for @dog.DogName</button>
+        </div>
+        <div class="customer-container">
+            <button class="customer-btn btn btn-outline-light btn-lg" onclick="@@dog.DogName">View pictures for @dog.DogName</button>
+        </div>
+    </div>
+</div>   
+
+<div class="rz-flex rz-justify-content-between rz-flex-wrap">
+    <!-- Customer Card -->
+    <div>
+        <div class="close-button-container">
+            <button type="button" class="close-button" @onclick="NavigateToCustomer" style="color: red; float: left;">X</button>
+        </div>
+    </div>
+    
+    <RadzenCard class="rz-my-12" style="/* max-width:870px; */ flex-grow: 1; border-radius: 15px; margin-right: 15px; width: 70%;">
+
+        <h5>Dog Detail</h5>
+        <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start" Gap="1rem" Class="rz-p-4">
+            <RadzenImage Path="/images/dogface.jpg" Style="width: 100px; height: 100px; border-radius: 50%;" />
+            <RadzenStack Gap="0">
+                <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">Name</RadzenText>
+                <RadzenText TextStyle="TextStyle.Body1"><b>@dog?.DogName</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Breed</RadzenText>
+                <RadzenText TextStyle="TextStyle.Body1"><b>@dog?.Breed</b></RadzenText>
+            </RadzenStack>
+        </RadzenStack>
+        <!-- Other Information Card -->
+        <RadzenCard class="rz-background-color-primary-light rz-shadow-0 rz-border-radius-0 rz-p-8" style="margin: 1rem calc(-1 * var(--rz-card-padding));">
+            <RadzenText TextStyle="TextStyle.H6" class="rz-color-on-primary-light"><strong>Other Information</strong></RadzenText>
+            <RadzenRow RowGap="0">
+                <RadzenColumn SizeSM="4">
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-color-on-primary-light rz-display-flex rz-mt-4 rz-mb-0">DOB</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1" class="rz-color-on-primary-light"><b>@dog?.DateOfBirth</b></RadzenText>
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-color-on-primary-light rz-display-flex rz-mt-4 rz-mb-0">Sex</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1" class="rz-color-on-primary-light"><b>@dog?.Sex</b></RadzenText>
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-color-on-primary-light rz-display-flex rz-mt-4 rz-mb-0">Vet</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1" class="rz-color-on-primary-light"><b>@dog?.Vet</b></RadzenText>
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-color-on-primary-light rz-display-flex rz-mt-4 rz-mb-0">Weight</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1" class="rz-color-on-primary-light"><b>@dog?.Weight</b></RadzenText>
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-color-on-primary-light rz-display-flex rz-mt-4 rz-mb-0">Color</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1" class="rz-color-on-primary-light"><b>@dog?.Color</b></RadzenText>
+
+                </RadzenColumn>
+                <RadzenColumn SizeSM="8">
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-color-on-primary-light rz-display-flex rz-mt-4 rz-mb-0">Ok with other Dogs</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1" class="rz-color-on-primary-light"><b>@dog?.OkWithOtherDogs</b></RadzenText>
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-color-on-primary-light rz-display-flex rz-mt-4 rz-mb-0">Has allergies</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1" class="rz-color-on-primary-light"><b>@dog?.HasAllergies</b></RadzenText>
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-color-on-primary-light rz-display-flex rz-mt-4 rz-mb-0">On medication</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1" class="rz-color-on-primary-light"><b>@dog?.OnMedication</b></RadzenText>
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-color-on-primary-light rz-display-flex rz-mt-4 rz-mb-0">Take a picture</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1" class="rz-color-on-primary-light"><b>@dog?.TakeApik</b></RadzenText>
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-color-on-primary-light rz-display-flex rz-mt-4 rz-mb-0">Notes</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1" class="rz-color-on-primary-light"><b>@dog?.Notes</b></RadzenText>
+                </RadzenColumn>
+            </RadzenRow>
+        </RadzenCard>
+
+        <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End" Gap="0">
+            <button type="submit" class="btn btn-primary custom-button" @onclick="OpenEditDialog">Add a vaccine</button>
+            <button type="submit" class="btn btn-info custom-button" @onclick="OpenEditDialog">Edit</button>
+            <button type="submit" class="btn btn-danger custom-button" @onclick="OpenEditDialog">Delete</button>
+        </RadzenStack>
+    </RadzenCard>
+
+    <!-- Vaccine Card -->
+    <div class="dogContainer">
+       @*  <ViewVaccine dogId="@dogId" /> *@
+       <ViewVaccine/>
+    </div>
+
+</div>
+
+@*Dialog to edit a customer*@
+<MatDialog @bind-IsOpen="@dialogIsOpen">
+    <MatDialogContent>
+        <div class="close-button-container">
+            <button type="button" class="close-button" @onclick="CloseForm" style="color: red; float: right;">X</button>
+        </div>
+        <div class="buttonBox"><h4 style="padding:1rem;">Edit Customer</h4></div>
+        <div Class="rz-p-0 rz-p-md-12">
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0.5rem" Class="rz-p-4 rz-mb-6 rz-border-radius-1" Style="border: var(--rz-grid-cell-border);">
+                <RadzenLabel Text="Variant:" />
+                <RadzenSelectBar @bind-Value="@variant" TextProperty="Text" ValueProperty="Value" Data="@(Enum.GetValues(typeof(Variant)).Cast<Variant>().Select(t => new { Text = $"{t}", Value = t }))" Size="ButtonSize.Small" Class="rz-display-none rz-display-xl-flex" />
+                <RadzenDropDown @bind-Value="@variant" TextProperty="Text" ValueProperty="Value" Data="@(Enum.GetValues(typeof(Variant)).Cast<Variant>().Select(t => new { Text = $"{t}", Value = t }))" Class="rz-display-inline-flex rz-display-xl-none" />
+            </RadzenStack>
+            <RadzenRow Gap="1rem">
+                <RadzenColumn Size="12" SizeSM="6">
+                    <RadzenStack>
+                        <RadzenFormField Text="First name" Variant="@variant">
+                            <RadzenTextBox @bind-Value="@value" />
+                        </RadzenFormField>
+                        <RadzenFormField Text="Last name" Variant="@variant">
+                            <RadzenTextBox @bind-Value="@value" />
+                        </RadzenFormField>
+                        <RadzenFormField Text="Phone 1" Variant="@variant">
+                            <RadzenNumeric @bind-Value="@intValue" />
+                        </RadzenFormField>
+                        <RadzenFormField Text="Phone 2" Variant="@variant">
+                            <RadzenNumeric @bind-Value="@intValue" />
+                        </RadzenFormField>
+                        <RadzenFormField Text="Phone 3" Variant="@variant">
+                            <RadzenNumeric @bind-Value="@intValue" />
+                        </RadzenFormField>
+                        <RadzenFormField Text="Email" Variant="@variant">
+                            <RadzenTextBox @bind-Value="@value" />
+                        </RadzenFormField>
+
+                    </RadzenStack>
+                </RadzenColumn>
+                <RadzenColumn Size="12" SizeSM="6">
+                    <RadzenStack>
+                        <RadzenFormField Text="City" Variant="@variant">
+                            <RadzenDropDown @bind-Value="@dropDownValue" />
+                        </RadzenFormField>
+                        <RadzenFormField Text="Provinve" Variant="@variant">
+                            <RadzenDropDown @bind-Value="@dropDownValue" />
+                        </RadzenFormField>
+                        <RadzenFormField Text="Postal code" Variant="@variant">
+                            <RadzenTextBox @bind-Value="@value" />
+                        </RadzenFormField>
+                        <RadzenFormField Text="Referral" Variant="@variant">
+                            <RadzenDropDown @bind-Value="@dropDownValue" />
+                        </RadzenFormField>
+                        <RadzenFormField Text="Notes" Variant="@variant">
+                            <RadzenTextBox @bind-Value="@value" />
+                        </RadzenFormField>
+                    </RadzenStack>
+                </RadzenColumn>
+            </RadzenRow>
+
+        </div>
+        <div class="buttonBox">
+            <button type="submit" class="btn btn-success btn-lg active custom-button">Save</button>
+            <button type="submit" class="btn btn-secondary btn-lg  active custom-button" @onclick="CloseDialog">Cancel</button>
+        </div>
+
+    </MatDialogContent>
+</MatDialog>
+
+@code {
+    [Parameter]
+    public int dogId { get; set; }
+    private string FeedBack { get; set; } = string.Empty;
+    protected DogView dog { get; set; } = new DogView();
+    protected bool dialogIsOpen { get; set; } = false;
+    protected bool dialogIsOpenForAddAdog { get; set; } = false;
+
+    Variant variant = Variant.Outlined;
+    string value = "Text";
+    int intValue = 123;
+    int radioButtonValue = 1;
+    string dropDownValue = "Around the Horn";
+    string dropDownDataGridValue = "";
+    string autoCompleteValue = "";
+    string color = "rgb(68, 58, 110)";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetAcustomer();
+    }
+
+
+
+    private async Task GetAcustomer()
+    {
+        try
+        {
+            dog = _services.ViewASingleDog(dogId);
+
+        }
+        catch (AggregateException ex)
+        {
+            foreach (var error in ex.InnerExceptions)
+            {
+                FeedBack = error.Message;
+            }
+        }
+        catch (ArgumentNullException ex)
+        {
+            FeedBack = GetInnerException(ex).Message;
+        }
+        catch (Exception ex)
+        {
+            FeedBack = GetInnerException(ex).Message;
+        }
+    }
+
+    private void OpenEditDialog()
+    {
+        dialogIsOpen = true;
+    }
+
+    private void CloseDialog()
+    {
+        dialogIsOpen = false;
+    }
+
+    private void OpenAddDogDialog()
+    {
+        dialogIsOpenForAddAdog = true;
+    }
+
+    private void HandleAddDogCancel()
+    {
+
+        dialogIsOpenForAddAdog = false;
+    }
+
+    //Method to close the form
+    private void CloseForm()
+    {
+        dialogIsOpen = false;
+    }
+
+    //Method to navigate to customer
+    private void NavigateToCustomer()
+    {
+        NavigationManager.NavigateTo("/SearchCustomer");
+    }
+
+    private Exception GetInnerException(Exception ex)
+    {
+        while (ex.InnerException != null)
+            ex = ex.InnerException;
+        return ex;
+    }
+}

@@ -1,0 +1,51 @@
+﻿.dog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+
+ 
+
+}
+
+.dogscontainer {
+    padding: 0 11%;
+}
+/*
+.dogCard:hover {
+     Add your hover styles here 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: orangered;
+}*/
+
+.rz-my-12:hover {
+    background-color: #f0f0f0; /* Change the background color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow on hover */
+    transform: scale(1.05); /* Scale the card on hover */
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; /* Add smooth transitions */
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.setBackground {
+    border-radius: 15px;
+    background: rgba(255, 253, 208, 0.3);
+}

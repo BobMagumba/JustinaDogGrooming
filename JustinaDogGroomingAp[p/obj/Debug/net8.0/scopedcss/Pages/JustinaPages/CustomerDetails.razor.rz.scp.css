@@ -1,0 +1,31 @@
+
+.rz-flex[b-qb0lwbg69e] {
+    display: flex;
+    justify-content:center;
+  /*  padding: 0 10rem;
+    width: 100%;*/
+
+  padding:0 11%;
+    
+}
+
+.dogContainer[b-qb0lwbg69e] {
+   /* display: flex;
+    flex-wrap: wrap;
+    width: 50%;*/
+   
+}
+
+
+h5[b-qb0lwbg69e], h6[b-qb0lwbg69e], h4[b-qb0lwbg69e] {
+    color:darkgray;
+}
+
+.custom-button[b-qb0lwbg69e] {
+    margin-right: 5px;
+}
+
+.buttonBox[b-qb0lwbg69e] {
+display:flex;
+    justify-content:center;
+}

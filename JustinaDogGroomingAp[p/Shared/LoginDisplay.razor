@@ -1,0 +1,21 @@
+﻿<AuthorizeView>
+    <Authorized>
+        <a href="MicrosoftIdentity/Account/Manage">Hello, @context.User.Identity?.Name!</a>
+        <form method="post" action="MicrosoftIdentity/Account/SignOut">
+            <button type="submit" class="nav-link btn btn-link">Log out</button>
+        </form>
+    </Authorized>
+    <NotAuthorized>
+        @* <a href="MicrosoftIdentity/Account/Register" style="color:#ffffff;">Register</a> *@
+        <a href="MicrosoftIdentity/Account/Signin" style="color:#ffffff;">Log in</a>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+
+
+
+
+
+
+

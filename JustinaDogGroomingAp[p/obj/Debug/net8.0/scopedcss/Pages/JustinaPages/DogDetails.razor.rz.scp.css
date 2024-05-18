@@ -1,0 +1,39 @@
+
+.rz-flex[b-0snmjnhxql] {
+    display: flex;
+    justify-content: center;
+    /*  padding: 0 10rem;
+    width: 100%;*/
+
+    padding: 0 11%;
+}
+
+
+
+.dogContainer[b-0snmjnhxql] {
+    /* display: flex;
+    flex-wrap: wrap;
+    width: 50%;*/
+}
+
+
+h5[b-0snmjnhxql], h6[b-0snmjnhxql], h4[b-0snmjnhxql] {
+    color: darkgray;
+}
+
+.custom-button[b-0snmjnhxql] {
+    margin-right: 5px;
+}
+
+.buttonBox[b-0snmjnhxql] {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-container[b-0snmjnhxql] {
+display: flex;
+justify-content: center;
+padding: 0 11%;
+margin-top: 4rem;
+margin-bottom: 1rem;
+}

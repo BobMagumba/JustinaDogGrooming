@@ -1,0 +1,141 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\JustinaDogGroomingAp[p.bundle.scp.css",
+      "PackagePath": "staticwebassets\\JustinaDogGroomingAp[p.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\css\\open-iconic\\README.md",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\images\\customer.jpeg",
+      "PackagePath": "staticwebassets\\images\\customer.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\images\\dog-grooming10.jpg",
+      "PackagePath": "staticwebassets\\images\\dog-grooming10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\images\\dog-grooming11.jpg",
+      "PackagePath": "staticwebassets\\images\\dog-grooming11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\images\\dog-grooming6.jpg",
+      "PackagePath": "staticwebassets\\images\\dog-grooming6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\images\\dog-grooming7.jpg",
+      "PackagePath": "staticwebassets\\images\\dog-grooming7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\images\\dog-grooming9.jpg",
+      "PackagePath": "staticwebassets\\images\\dog-grooming9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\images\\dog.webp",
+      "PackagePath": "staticwebassets\\images\\dog.webp"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\images\\dogBackground.jpg",
+      "PackagePath": "staticwebassets\\images\\dogBackground.jpg"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\images\\dogBackground5 (1).jpg",
+      "PackagePath": "staticwebassets\\images\\dogBackground5 (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\images\\dogBackground5 (2).jpg",
+      "PackagePath": "staticwebassets\\images\\dogBackground5 (2).jpg"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\images\\dogface.jpg",
+      "PackagePath": "staticwebassets\\images\\dogface.jpg"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\images\\dogs (3).jpg",
+      "PackagePath": "staticwebassets\\images\\dogs (3).jpg"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\images\\imageJustina4.jpeg",
+      "PackagePath": "staticwebassets\\images\\imageJustina4.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\images\\image_Justina3.jpeg",
+      "PackagePath": "staticwebassets\\images\\image_Justina3.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\images\\justina_logo.png",
+      "PackagePath": "staticwebassets\\images\\justina_logo.png"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\justina_pro\\Version3\\JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.JustinaDogGroomingAp[p.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.JustinaDogGroomingAp[p.props",
+      "PackagePath": "build\\JustinaDogGroomingAp[p.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.JustinaDogGroomingAp[p.props",
+      "PackagePath": "buildMultiTargeting\\JustinaDogGroomingAp[p.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.JustinaDogGroomingAp[p.props",
+      "PackagePath": "buildTransitive\\JustinaDogGroomingAp[p.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

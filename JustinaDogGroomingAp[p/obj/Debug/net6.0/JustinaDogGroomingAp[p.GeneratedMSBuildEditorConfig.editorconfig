@@ -1,0 +1,121 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = JustinaDogGroomingAp_p
+build_property.RootNamespace = JustinaDogGroomingAp_p
+build_property.ProjectDir = C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\justina_pro\Version4\JustinaDogGroomingAp[p\JustinaDogGroomingAp[p\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\justina_pro\Version4\JustinaDogGroomingAp[p\JustinaDogGroomingAp[p
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Pages/JustinaPages/Christmas.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVzdGluYVBhZ2VzXENocmlzdG1hcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Pages/JustinaPages/DeleteCustomer.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVzdGluYVBhZ2VzXERlbGV0ZUN1c3RvbWVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Pages/JustinaPages/EditCustomer.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVzdGluYVBhZ2VzXEVkaXRDdXN0b21lci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Shared/LoginDisplay.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luRGlzcGxheS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Pages/JustinaPages/AddADog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVzdGluYVBhZ2VzXEFkZEFEb2cucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-tcvvnves5o
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Pages/JustinaPages/AddCustomers.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVzdGluYVBhZ2VzXEFkZEN1c3RvbWVycy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-l9k4dh250p
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Pages/JustinaPages/CustomerDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVzdGluYVBhZ2VzXEN1c3RvbWVyRGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-qb0lwbg69e
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Pages/JustinaPages/DogDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVzdGluYVBhZ2VzXERvZ0RldGFpbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-0snmjnhxql
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Pages/JustinaPages/SearchCustomer.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVzdGluYVBhZ2VzXFNlYXJjaEN1c3RvbWVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-00ji4oj8ey
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Pages/JustinaPages/ViewDogs.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVzdGluYVBhZ2VzXFZpZXdEb2dzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-l1mh5uut9e
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Pages/JustinaPages/ViewVaccine.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVzdGluYVBhZ2VzXFZpZXdWYWNjaW5lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-ydzrngxoh2
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Shared/FooterMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEZvb3Rlck1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-5eeh9eyumu
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ngvs3rl4do
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-idhvyp6dmt
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Shared/NotAuthorized.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5vdEF1dGhvcml6ZWQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-zrt4q70um7
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Areas/Identity/Pages/Account/LogOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dPdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Areas/Identity/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/justina_pro/Version4/JustinaDogGroomingAp\[p/JustinaDogGroomingAp\[p/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

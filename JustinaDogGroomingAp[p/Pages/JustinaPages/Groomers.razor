@@ -1,0 +1,78 @@
+﻿@page "/Groomers"
+@using JustinaSystem.BLL
+@using JustinaSystem.ViewModels
+@using MatBlazor
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+@inject GrommerServices _services
+
+<div class="groomerContainer">
+    <div class="groomingClass">  <h1>Groomers</h1></div>
+  
+    <RadzenButton Text="Add a groomer" ButtonStyle="ButtonStyle.Primary" Icon="add" IconPosition="IconPosition.Left" Size="ButtonSize.Large" Click="@(args => OnAddGroomer())" />
+    @* <RadzenButton Icon="add" ButtonStyle="ButtonStyle.Primary" Size="ButtonSize.Large" class="rz-border-radius-10 rz-shadow-10" /> *@
+    <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="10" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Center" ShowPagingSummary="true"
+                    Data="@groomers" TItem="GroomerView" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or" RowClick="@(args => OnRowSelect(args.Data.GroomerId))">
+        <Columns>
+            <RadzenDataGridColumn TItem="GroomerView" Property="GroomerId" Filterable="false" Title="ID" Frozen="true" Width="80px" TextAlign="TextAlign.Center" />
+            <RadzenDataGridColumn TItem="GroomerView" Title="Photo" Frozen="true" Sortable="false" Filterable="false" Width="80px" TextAlign="TextAlign.Center">           
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="GroomerView" Property="FirstName" Title="First Name" Frozen="true" Width="160px" />
+            <RadzenDataGridColumn TItem="GroomerView" Property="LastName" Title="Last Name" Width="160px" />
+            <RadzenDataGridColumn TItem="GroomerView" Property="PhoneNumber" Title="Phone" Width="120px" />
+            <RadzenDataGridColumn TItem="GroomerView" Property="EmailAddress" Title="Email" FormatString="{0:d}" Width="160px" />
+            <RadzenDataGridColumn TItem="GroomerView" Property="EnrollmentDate" Title="Hire date" Width="160px" />
+            <RadzenDataGridColumn TItem="GroomerView" Property="Notes" Title="Notes" Width="300px" />
+        </Columns>
+    </RadzenDataGrid>
+   @*  <MatTable Items="@groomers" LoadInitialData="true" Striped="true" RequestApiOnlyOnce="true" AllowSelection="true" RowClass="tester"
+              ApiUrl="https://jsonplaceholder.typicode.com/todos" FilterByColumnName="Title" DebounceMilliseconds="150" class="mat-elevation-z5" style="background-color: white;">
+        <MatTableHeader>
+            <th style="font-size: 11px; font-weight:bold;">Id</th>
+            <th style="font-size: 12px; font-weight:bold">First name</th>
+            <th style="font-size: 12px; font-weight:bold">Last name</th>
+            <th style="font-size: 12px; font-weight:bold">Phone</th>
+            <th style="font-size: 12px; font-weight:bold">Email</th>
+            <th style="font-size: 12px; font-weight:bold">Hire date</th>
+            <th style="font-size: 12px; font-weight:bold">Notes</th>
+        </MatTableHeader>
+        <MatTableRow>
+            <td style="font-size: 12px;">@String.Format("{0:d}", @context.GroomerId)</td>
+            <td style="font-size: 12px;">@context.FirstName</td>
+            <td style="font-size: 12px;">@context.LastName</td>
+            <td style="font-size: 12px;">@context.PhoneNumber</td>
+            <td style="font-size: 12px;">@context.EmailAddress</td>
+            <td style="font-size: 12px;">@context.EnrollmentDate</td>
+            <td style="font-size: 12px;">@context.Notes</td>
+        </MatTableRow>
+    </MatTable> *@
+</div>
+
+
+@code {
+ 
+    protected List <GroomerView> groomers { get; set; } = new List<GroomerView>();
+
+protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(1000);
+        await GetGroomers();
+    }
+
+
+    private async Task GetGroomers()
+    {
+        groomers = await _services.ViewAllGroomers();
+    }
+
+    void OnRowSelect(int GroomerId)
+    {
+      
+        NavigationManager.NavigateTo($"/JustinaPages/GroomerDetail/{GroomerId}");
+    }
+
+    private void OnAddGroomer()
+    {
+        NavigationManager.NavigateTo("/JustinaPages/Groomers");
+    }
+}

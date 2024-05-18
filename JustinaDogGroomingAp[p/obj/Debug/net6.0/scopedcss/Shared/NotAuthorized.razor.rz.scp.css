@@ -1,0 +1,14 @@
+.card-body[b-zrt4q70um7] {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+align-items: center;
+}
+
+.card-title[b-zrt4q70um7] {
+    color: black;
+}
+
+.btn-hover:hover[b-zrt4q70um7] {
+    background-color: #0056b3; 
+}

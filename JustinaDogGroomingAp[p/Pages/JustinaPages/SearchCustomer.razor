@@ -1,0 +1,545 @@
+﻿@page "/SearchCustomer"
+@using JustinaSystem.BLL
+@using JustinaSystem.ViewModels
+@using MatBlazor
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+@inject DogServices _services
+
+
+<PageTitle>Search For Customers</PageTitle>
+
+<div class="page-header">
+    <h1>Justina's Dog Grooming</h1>
+    <div class="flex-container" style="margin-top:2rem;">
+        <div class="customer-container">
+            <button class="customer-btn btn btn-outline-light btn-lg text-uppercase" onclick="@DaialogueToOpen">Add Customer</button>
+        </div>
+        <div class="customer-container">
+            <button class="customer-btn btn btn-outline-light btn-lg text-uppercase" onclick="@OpenSearchForm">Search Customer</button>
+        </div>
+    </div>
+</div>
+
+@if (customersList == null || customersList.Count == 0)
+{
+    <div class="d-flex align-items-center justify-content-center mt-5">
+        <h4><em>Loading...</em></h4>
+    </div>
+}
+else
+{
+     <div class="row">
+        <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="12" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Center" ShowPagingSummary="true"
+                        Data="@customers" TItem="CustomerView" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or" RowClick="@(args => NavigateToCustomerDetail(args.Data.CustomerId))">
+            <Columns>
+                <RadzenDataGridColumn TItem="CustomerView" Property="CustomerId" Filterable="false" Title="ID" Frozen="true" Width="80px" TextAlign="TextAlign.Center" />
+                <RadzenDataGridColumn TItem="CustomerView" Title="Photo" Frozen="true" Sortable="false" Filterable="false" Width="80px" TextAlign="TextAlign.Center">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="CustomerView" Property="FirstName" Title="First Name" Frozen="true" Width="160px" />
+                <RadzenDataGridColumn TItem="CustomerView" Property="LastName" Title="Last Name" Width="160px" />
+                <RadzenDataGridColumn TItem="CustomerView" Property="PhoneNumber1" Title="Phone" Width="120px" />
+                <RadzenDataGridColumn TItem="CustomerView" Property="EmailAddress" Title="Email" FormatString="{0:d}" Width="160px" />
+                <RadzenDataGridColumn TItem="CustomerView" Property="EnrollmentDate" Title="Reg date" Width="90px" />
+                <RadzenDataGridColumn TItem="CustomerView" Property="Address" Title="Address" Width="120px" />
+                <RadzenDataGridColumn TItem="CustomerView" Property="City" Title="City" Width="120px" />
+                <RadzenDataGridColumn TItem="CustomerView" Property="NumberOfDogs" Title="# Dogs" Width="90px" />
+            </Columns>
+        </RadzenDataGrid>
+     </div>
+   @*  <div class="customer-container">
+        <div class="row">
+            @foreach (var customer in customersList)
+            {
+
+                <div class="col-md-4 mb-4">
+                    <div class="card" @onclick="() => NavigateToCustomerDetail(customer.CustomerId)">
+                        <div class="card-body">
+                            <h7 class="customer-name">@customer.FirstName @customer.LastName</h7>
+                            <ul class="customer-details list-unstyled">
+                                <li><strong>Address:</strong> @customer.Address</li>
+                                <li><strong>City:</strong> @customer.City</li>
+                                 <li><strong>State:</strong> @customer.State</li>
+                        <li><strong>Zip:</strong> @customer.Zip</li>
+                                <li><strong>Phone:</strong> @customer.PhoneNumber1</li>
+                                <li><strong>Email:</strong> @customer.EmailAddress</li>
+                                <li><strong># Number of Dogs:</strong> @customer.NumberOfDogs</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <div class="socials">
+                                <a href="https://www.facebook.com/" target="_blank">
+                                    <RadzenIcon Icon="facebook" style="color: #316FF6;" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="paginationContainer">
+                <button class="btn btn-dark" @onclick="@(e => NavigateTo("first"))">@("<<")</button>
+                <button class="btn btn-dark" @onclick="@(e => NavigateTo("prev"))" disabled="@(CurrentPage == 0)" style="margin-left: 5px;">Prev</button>
+                @for (int i = 0; i <= TotalPages; i++)
+                {
+                    var pageNumber = i;
+                    <button class="btn @(CurrentPage == pageNumber? "btn-dark":"btn-outline-secondary")" @onclick="@(e => UpdateList(pageNumber))" style="margin: 0 5px;">@(i + 1)</button>
+
+                }
+                <button class="btn btn-dark" @onclick="@(e => NavigateTo("next"))" disabled="@(CurrentPage == TotalPages)" style="margin: 0 5px;">Next</button>
+                <button class="btn btn-dark" @onclick="@(e => NavigateTo("last"))">@(">>")</button>
+
+            </div>
+
+        </div>
+
+    </div> *@
+}
+@*Dialog to add a customer*@
+<MatDialog @bind-IsOpen="@dialogIsOpen">
+    <MatDialogContent Style="background-color:lightblue; color:white;">
+        <AddCustomers DialogueToAddCustomer="DialogueToClose" />
+    </MatDialogContent>
+</MatDialog>
+
+@*Dial to search for a customer*@
+<MatDialog @bind-IsOpen="@dialogToSearchIsOpen">
+    <MatDialogContent Style="background-color:lightblue; color:white;">
+
+        <EditForm Model="@customer" OnValidSubmit="@FilterCustomer" class="light-gray-background">
+            
+            <div class="close-button-container">
+                <button type="button" class="close-button" @onclick="CloseForm" style="color: red; float: right;">X</button>
+            </div>
+            <div class="container">
+                <h3 style="color:black;">Customer ID</h3>
+                <div class="form-group">
+                    <label for="FirstName">First Name</label>
+                    <input type="text" class="form-control" id="FirstName" placeholder="ID" @bind="customerId" @oninput="HandleIdInput">
+
+                </div>
+                <div class="flex">
+                    <div class="form-group">
+                        <label for="FirstName">First Name</label>
+                        <input type="text" class="form-control" id="FirstName" placeholder="Enter first name" @bind="firstName" @oninput="HandleFirstNameInput" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="LastName">Last Name</label>
+                        <input type="text" class="form-control" id="LastName" placeholder="Enter last name" @bind="lastName" @oninput="HandleLastNameInput">
+                       
+                    </div>
+
+                </div>
+                <div class="flex">
+                    <div class="form-group">
+                        <label for="EmailAddress">Email</label>
+                        <input type="email" class="form-control" id="EmailAddress" placeholder="Enter email" @bind="emailAddress" @oninput="HandleEmailInput">
+                    
+                    </div>
+                    <div class="form-group">
+                        <label for="EnrollmentDate">Enrollment Date</label>
+                        <input type="date" class="form-control" id="EnrollmentDate" @bind="enrollmentDate">
+                       
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="form-group">
+                        <label for="Referral">Referral source</label>
+                        <select class="form-select form-control col-3" @bind="referral" @oninput="HandleReferralInput">
+                            <option value="">Referral source...</option>
+                            @foreach (var referral in Refferals)
+                            {
+                                <option value="@referral">@referral</option>
+                            }
+                        </select>
+
+                    
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Zip">Postal Code</label>
+                        <input type="text" class="form-control" id="Zip" placeholder="Enter Postal Code" @bind="zip">
+                    </div>
+                </div>
+
+                <div class="flex2">
+                    <div class="form-group">
+                        <label for="Address">Address</label>
+                        <input type="text" class="form-control" id="Address" placeholder="Enter address" @bind="address">
+                      
+                    </div>
+                    <div class="form-group">
+                        <label for="City">City</label>
+                        <select class="form-select form-control col-3" @oninput="GetState" @bind="city">
+                            <option value="">City...</option>
+                            @foreach (var city in Cities)
+                            {
+                                <option value="@city">@city</option>
+                            }
+                        </select>
+                   
+                    </div>
+                    <div class="form-group">
+                        <label for="State">Province</label>
+                        <input type="text" class="form-control" id="State" placeholder="Enter Province" @bind="state">
+                        @* <input type="text" class="form-control" id="State" placeholder="State" value="@customer.State" disabled> *@
+                      
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="PhoneNumber1">Phone Number 1</label>
+                    <input type="text" class="form-control" id="PhoneNumber1" placeholder="Enter phone number 1" @bind="phoneNumber">
+                  
+                </div>
+                @* <div class="form-group">
+                    <label for="PhoneNumber2">Phone Number 2</label>
+                    <input type="text" class="form-control" id="PhoneNumber2" placeholder="Enter phone number 2" @bind="customer.PhoneNumber2">
+                  
+                </div>
+                <div class="form-group">
+                    <label for="PhoneNumber3">Phone Number 3</label>
+                    <input type="text" class="form-control" id="PhoneNumber3" placeholder="Enter phone number 3" @bind="customer.PhoneNumber3">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="Notes">Notes</label>
+                    <textarea class="form-control" id="Notes" rows="4" placeholder="Enter notes" @bind="customer.Notes"></textarea>
+                </div>
+ *@
+                <div class="buttonContainer">
+                    <button type="submit" class="btn btn-success" @onclick="CloseSearchForm">Submit</button>
+                    <button type="reset" class="btn btn-secondary" @onclick="ClearFieldsForSearchForm">Clear</button>
+                </div>
+            </div>
+
+        </EditForm>
+
+
+
+
+        
+    </MatDialogContent>
+</MatDialog>
+
+@code {
+
+    public string[] Refferals { get; set; } = Array.Empty<string>();
+    public string[] Cities { get; set; } = Array.Empty<string>();
+    public string? State { get; set; }
+    public int NumberOfDogs { get; set; }
+    private string FeedBack { get; set; } = string.Empty;
+    protected CustomerView customer { get; set; } = new CustomerView();
+    protected List<CustomerView> customers { get; set; } = new List<CustomerView>();
+    protected List<CustomerView> customersList { get; set; } = new List<CustomerView>();
+    protected bool showCustomerList { get; set; } = false;
+    protected bool showTable { get; set; } = true;
+    protected bool isLoading { get; set; } = false;
+    protected bool dialogIsOpen { get; set; } = false;
+    protected bool dialogToSearchIsOpen { get; set; } = false;
+    public int PageSize { get; set; }//for pagination
+    public int TotalPages { get; set; }//for pagination}
+    public int CurrentPage { get; set; }
+    public bool IsGridViewFiltred { get; set; } 
+
+
+    //for pagination
+
+
+
+    [Parameter]
+    public bool WithColumnPicker { get; set; } = false;
+
+    int customerId = 0;
+    string? firstName = null;
+    string? lastName = null;
+    string? phoneNumber = null;
+    string? emailAddress = null;
+    DateTime? enrollmentDate = null;
+    string? address = null;
+    string? city = null;
+    string? state = null;
+    string? zip = null;
+    string? referral = null;
+
+    [Inject]
+    protected JustinaServices? justinaServices { get; set; }
+    bool CustomerIDVisible = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(1000);
+        await SearchForCustomer();
+        await LoadReferrals();
+        await LoadCities();
+        await SearchCustomerForPagination();
+    }
+
+    //Search Customer for pagination
+    private async Task SearchCustomerForPagination()
+    {
+        PageSize = 6;
+        customersList = customers.Take(PageSize).ToList();
+        TotalPages = (int)Math.Ceiling(customers.Count / (double)PageSize);
+    }
+
+    private void UpdateList(int pageNumber)
+    {
+        customersList= customers.Skip(PageSize * pageNumber).Take(PageSize).ToList();
+        CurrentPage = pageNumber;
+    }
+
+    private void NavigateTo(string direction)
+    {
+        if(direction == "prev" && CurrentPage !=0)
+            CurrentPage -= 1;
+        if(direction == "next" && CurrentPage != TotalPages)
+            CurrentPage += 1;
+        if (direction == "first")
+            CurrentPage = 0;
+        if (direction == "last")
+            CurrentPage = TotalPages;
+        UpdateList(CurrentPage);
+    }
+
+    // Navigate to Add Customer
+    void NavigateToAddCustomer()
+    {
+        NavigationManager.NavigateTo("/JustinaPages/AddCustomers");
+    }
+
+    // Navigate to Search Customer
+    void NavigateToSearchCustomer()
+    {
+        showCustomerList = false;
+        showTable = true;
+    }
+
+
+    // Load Referrals
+    private async Task LoadReferrals()
+    {
+        Refferals = await JSRuntime.InvokeAsync<string[]>("getReferralSource");
+
+    }
+
+    // Load Cities
+    private async Task LoadCities()
+    {
+        Cities = await JSRuntime.InvokeAsync<string[]>("getCanadianCities");
+
+        //Get State of the City after the City is selected
+        await GetState();
+
+    }
+
+    //Get state of the City
+    private async Task GetState()
+    {
+        State = await JSRuntime.InvokeAsync<string>("getProvinces", customer.City);
+    }
+    //Method to ope the search form
+    private void OpenSearchForm()
+    {
+        dialogToSearchIsOpen = true;
+    }
+
+    //Search Customer
+    private async Task SearchForCustomer()
+    {
+        isLoading = true;
+
+        try
+        {
+            customers = justinaServices.ViewCustomerUsingAntParameters(customerId, firstName, lastName, phoneNumber, emailAddress,
+        enrollmentDate, address, city, state, zip, referral);
+            if (customers.Count == 0)
+            {
+                isLoading = false;
+                FeedBack = "Customer not found";
+            }
+            else
+            {
+                isLoading = false;
+                FeedBack = string.Empty;
+                showCustomerList = true;
+                //Hide the form if the customer is found
+                showTable = false;
+            }
+
+
+
+        }
+        catch (AggregateException ex)
+        {
+            foreach (var error in ex.InnerExceptions)
+            {
+                FeedBack = error.Message;
+            }
+        }
+        catch (ArgumentNullException ex)
+        {
+            FeedBack = GetInnerException(ex).Message;
+        }
+        catch (Exception ex)
+        {
+            FeedBack = GetInnerException(ex).Message;
+        }
+    }
+
+    //Search Customer
+    private async Task FilterCustomer()
+    {
+        isLoading = true;
+
+        try
+        {
+            customersList = justinaServices.ViewCustomerUsingAntParameters(customerId, firstName, lastName, phoneNumber, emailAddress,
+        enrollmentDate, address, city, state, zip, referral);
+            if (customersList.Count == 0)
+            {
+                isLoading = false;
+                FeedBack = "Customer not found";
+            }
+            else
+            {
+                isLoading = false;
+                FeedBack = string.Empty;
+                showCustomerList = true;
+                //Hide the form if the customer is found
+                showTable = false;
+            }
+
+
+
+        }
+        catch (AggregateException ex)
+        {
+            foreach (var error in ex.InnerExceptions)
+            {
+                FeedBack = error.Message;
+            }
+        }
+        catch (ArgumentNullException ex)
+        {
+            FeedBack = GetInnerException(ex).Message;
+        }
+        catch (Exception ex)
+        {
+            FeedBack = GetInnerException(ex).Message;
+        }
+    }
+    private void CloseSearchForm()
+    {
+        dialogToSearchIsOpen = false;
+    }
+
+    async void DialogueToClose()
+    {
+        dialogIsOpen = false;
+        await SearchForCustomer();
+    }
+
+    private void DaialogueToOpen()
+    {
+        dialogIsOpen = true;
+    }
+
+    //Close form when I click X
+    private async Task CloseForm()
+    {
+        dialogToSearchIsOpen = false;
+
+    }
+
+    //clear fields
+    private void ClearFields()
+    {
+        customer = new CustomerView();
+        showCustomerList = false;
+        FeedBack = string.Empty;
+        //Refresh page after the fields are cleared
+
+    }
+
+    //Clear fields for search form
+    private async void ClearFieldsForSearchForm()
+    {
+        customerId = 0;
+        firstName = null;
+        lastName = null;
+        phoneNumber = null;
+        emailAddress = null;
+        enrollmentDate = null;
+        address = null;
+        city = null;
+        state = null;
+        zip = null;
+        referral = null;
+
+        await SearchCustomerForPagination();
+    }
+    //Handle ID input
+    private void HandleIdInput(ChangeEventArgs args)
+    {
+        customerId = Convert.ToInt32(args.Value);
+        FilterCustomer();
+    }
+    //Handle First name input
+    private void HandleFirstNameInput(ChangeEventArgs args)
+    {
+        firstName = args.Value.ToString();
+        FilterCustomer();
+    }
+
+    //Handle Last name input
+    private void HandleLastNameInput(ChangeEventArgs args)
+    {
+        lastName = args.Value.ToString();
+        FilterCustomer();
+    }
+    //Handle Email input
+    private void HandleEmailInput(ChangeEventArgs args)
+    {
+        emailAddress = args.Value.ToString();
+        FilterCustomer();
+    }
+
+    //Method to navigate to customer
+    private void NavigateToCustomerDetail(int customerId)
+    {
+        NavigationManager.NavigateTo($"/JustinaPages/CustomerDetail/{customerId}");
+    }
+
+
+    //show number of dogs for each customer
+    private int  GetNumberOfDogs(int customerID)
+    {
+       return NumberOfDogs = _services.CountDogs(customerId);
+    }
+
+
+    private void HandleReferralInput(ChangeEventArgs args)
+    {
+        referral = args.Value.ToString();
+        FilterCustomer();
+    }
+ 
+    //get inner exception
+    #region Methods
+    private Exception GetInnerException(Exception ex)
+    {
+        while (ex.InnerException != null)
+            ex = ex.InnerException;
+        return ex;
+    }
+
+
+    #endregion
+
+
+    
+}

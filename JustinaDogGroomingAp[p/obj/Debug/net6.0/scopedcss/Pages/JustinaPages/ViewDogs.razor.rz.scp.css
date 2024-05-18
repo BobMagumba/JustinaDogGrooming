@@ -1,0 +1,20 @@
+.dogStack[b-l1mh5uut9e] {
+    width: 10%;
+}
+
+h5[b-l1mh5uut9e], h6[b-l1mh5uut9e], h4[b-l1mh5uut9e] {
+    color: darkgray;
+}
+
+.rz-my-12[b-l1mh5uut9e] {
+    display: flex;
+}
+
+.dogCard:hover[b-l1mh5uut9e] {
+    /* Add your hover styles here */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: orangered;
+}
