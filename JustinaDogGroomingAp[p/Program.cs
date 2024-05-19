@@ -36,15 +36,15 @@ builder.Services.AddMemoryCache();
 
 
 //add connection to azure
-builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-    .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("AzureADB2C"));
+//builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
+//    .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("AzureADB2C"));
 
 //Add Admin policy
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy(name:"Admin", policy =>
-           policy.RequireClaim(claimType:"jobTitle", allowedValues:"Admin"));
-});
+//builder.Services.AddAuthorization(options =>
+//{
+//    options.AddPolicy(name:"Admin", policy =>
+//           policy.RequireClaim(claimType:"jobTitle", allowedValues:"Admin"));
+//});
 
 
 

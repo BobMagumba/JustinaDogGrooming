@@ -3,15 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\cloned2\\JustinaDogGrooming\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{277BEE36-81B6-422F-AF56-D46587BBC54C}|JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p.csproj|c:\\users\\bmagu\\onedrive\\desktop\\projects\\bobstar_pro\\cloned2\\justinadoggrooming\\justinadoggroomingap[p\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{277BEE36-81B6-422F-AF56-D46587BBC54C}|JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p.csproj|solutionrelative:justinadoggroomingap[p\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bmagu\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-JustinaDogGroomingAp_p-c5876ed3-30aa-4461-837f-88b07c038354\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{277BEE36-81B6-422F-AF56-D46587BBC54C}|JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p.csproj|c:\\users\\bmagu\\onedrive\\desktop\\projects\\bobstar_pro\\cloned2\\justinadoggrooming\\justinadoggroomingap[p\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{277BEE36-81B6-422F-AF56-D46587BBC54C}|JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p.csproj|solutionrelative:justinadoggroomingap[p\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{277BEE36-81B6-422F-AF56-D46587BBC54C}|JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p.csproj|c:\\users\\bmagu\\onedrive\\desktop\\projects\\bobstar_pro\\cloned2\\justinadoggrooming\\justinadoggroomingap[p\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{277BEE36-81B6-422F-AF56-D46587BBC54C}|JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p.csproj|solutionrelative:justinadoggroomingap[p\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{277BEE36-81B6-422F-AF56-D46587BBC54C}|JustinaDogGroomingAp[p\\JustinaDogGroomingAp[p.csproj|c:\\users\\bmagu\\onedrive\\desktop\\projects\\bobstar_pro\\cloned2\\justinadoggrooming\\justinadoggroomingap[p\\pages\\justinapages\\alldogs.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -41,7 +41,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -53,26 +53,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "secrets.json",
               "DocumentMoniker": "C:\\Users\\bmagu\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-JustinaDogGroomingAp_p-c5876ed3-30aa-4461-837f-88b07c038354\\secrets.json",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-JustinaDogGroomingAp_p-c5876ed3-30aa-4461-837f-88b07c038354\\secrets.json",
               "ToolTip": "C:\\Users\\bmagu\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-JustinaDogGroomingAp_p-c5876ed3-30aa-4461-837f-88b07c038354\\secrets.json",
               "RelativeToolTip": "..\\..\\..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-JustinaDogGroomingAp_p-c5876ed3-30aa-4461-837f-88b07c038354\\secrets.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-05-18T07:54:56.128Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\cloned2\\JustinaDogGrooming\\JustinaDogGroomingAp[p\\appsettings.json",
               "RelativeDocumentMoniker": "JustinaDogGroomingAp[p\\appsettings.json",
               "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\cloned2\\JustinaDogGrooming\\JustinaDogGroomingAp[p\\appsettings.json",
               "RelativeToolTip": "JustinaDogGroomingAp[p\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAACAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-05-18T07:54:32.597Z",
               "EditorCaption": ""
@@ -115,15 +115,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\cloned2\\JustinaDogGrooming\\JustinaDogGroomingAp[p\\Program.cs",
               "RelativeDocumentMoniker": "JustinaDogGroomingAp[p\\Program.cs",
               "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\Projects\\Bobstar_pro\\cloned2\\JustinaDogGrooming\\JustinaDogGroomingAp[p\\Program.cs",
               "RelativeToolTip": "JustinaDogGroomingAp[p\\Program.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAkwCMAAAAAAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-06T07:30:43.677Z"
+              "WhenOpened": "2024-03-06T07:30:43.677Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

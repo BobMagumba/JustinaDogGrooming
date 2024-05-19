@@ -831,6 +831,7 @@ C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\cloned2\JustinaDogGrooming\
 C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\cloned2\JustinaDogGrooming\JustinaDogGroomingAp[p\obj\Debug\net8.0\JustinaDogGroomingAp[p.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\cloned2\JustinaDogGrooming\JustinaDogGroomingAp[p\obj\Debug\net8.0\JustinaDogGroomingAp[p.RazorAssemblyInfo.cache
 C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\cloned2\JustinaDogGrooming\JustinaDogGroomingAp[p\obj\Debug\net8.0\JustinaDogGroomingAp[p.RazorAssemblyInfo.cs
+C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\cloned2\JustinaDogGrooming\JustinaDogGroomingAp[p\obj\Debug\net8.0\JustinaDogGroomingAp[p.sourcelink.json
 C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\cloned2\JustinaDogGrooming\JustinaDogGroomingAp[p\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\cloned2\JustinaDogGrooming\JustinaDogGroomingAp[p\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\cloned2\JustinaDogGrooming\JustinaDogGroomingAp[p\obj\Debug\net8.0\staticwebassets\msbuild.JustinaDogGroomingAp[p.Microsoft.AspNetCore.StaticWebAssets.props

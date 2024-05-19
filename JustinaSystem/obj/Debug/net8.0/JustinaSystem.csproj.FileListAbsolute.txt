@@ -54,6 +54,7 @@ C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\cloned2\JustinaDogGrooming\
 C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\cloned2\JustinaDogGrooming\JustinaSystem\obj\Debug\net8.0\JustinaSystem.AssemblyInfoInputs.cache
 C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\cloned2\JustinaDogGrooming\JustinaSystem\obj\Debug\net8.0\JustinaSystem.AssemblyInfo.cs
 C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\cloned2\JustinaDogGrooming\JustinaSystem\obj\Debug\net8.0\JustinaSystem.csproj.CoreCompileInputs.cache
+C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\cloned2\JustinaDogGrooming\JustinaSystem\obj\Debug\net8.0\JustinaSystem.sourcelink.json
 C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\cloned2\JustinaDogGrooming\JustinaSystem\obj\Debug\net8.0\JustinaSystem.dll
 C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\cloned2\JustinaDogGrooming\JustinaSystem\obj\Debug\net8.0\refint\JustinaSystem.dll
 C:\Users\bmagu\OneDrive\Desktop\Projects\Bobstar_pro\cloned2\JustinaDogGrooming\JustinaSystem\obj\Debug\net8.0\JustinaSystem.pdb

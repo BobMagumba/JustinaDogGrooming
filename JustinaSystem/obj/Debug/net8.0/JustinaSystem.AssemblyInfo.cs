@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JustinaSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e10507e7d5359602c967b4d016bc2237c32d0e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("JustinaSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JustinaSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
