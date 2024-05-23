@@ -13,7 +13,14 @@
     justify-content: center;
 }
 
+.rz-flex[b-00ji4oj8ey] {
+    display: flex;
+    justify-content: center;
+    /*  padding: 0 10rem;
+    width: 100%;*/
 
+    padding: 0 11%;
+}
 
 .container[b-00ji4oj8ey] {
     background-color: #fff;

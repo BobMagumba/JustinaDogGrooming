@@ -16,22 +16,85 @@
             <button class="customer-btn btn btn-outline-light btn-lg text-uppercase" onclick="@DaialogueToOpen">Add Customer</button>
         </div>
         <div class="customer-container">
-            <button class="customer-btn btn btn-outline-light btn-lg text-uppercase" onclick="@OpenSearchForm">Search Customer</button>
+            <button class="customer-btn btn btn-outline-light btn-lg text-uppercase" onclick="@DisplaySearchForm">Search Customer</button>
         </div>
     </div>
 </div>
 
-@if (customersList == null || customersList.Count == 0)
+@if(displayCards)
 {
-    <div class="d-flex align-items-center justify-content-center mt-5">
-        <h4><em>Loading...</em></h4>
-    </div>
+    @if (customersList == null || customersList.Count == 0)
+    {
+        <div class="d-flex align-items-center justify-content-center mt-5">
+            <h4><em>Loading...</em></h4>
+        </div>
+    }
+    else
+    {
+
+        <div class="customer-container">
+            <div class="row">
+                @foreach (var customer in customersList)
+                {
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card" @onclick="() => NavigateToCustomerDetail(customer.CustomerId)">
+                            <div class="card-body">
+                                <h7 class="customer-name">@customer.FirstName @customer.LastName</h7>
+                                <ul class="customer-details list-unstyled">
+                                    <li><strong>Address:</strong> @customer.Address</li>
+                                    <li><strong>City:</strong> @customer.City</li>
+                                    <li><strong>State:</strong> @customer.State</li>
+                                    <li><strong>Zip:</strong> @customer.Zip</li>
+                                    <li><strong>Phone:</strong> @customer.PhoneNumber1</li>
+                                    <li><strong>Email:</strong> @customer.EmailAddress</li>
+                                    <li><strong># Number of Dogs:</strong> @customer.NumberOfDogs</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <div class="socials">
+                                    <a href="https://www.facebook.com/" target="_blank">
+                                        <RadzenIcon Icon="facebook" style="color: #316FF6;" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <div class="paginationContainer">
+                    <button class="btn btn-dark" @onclick="@(e => NavigateTo("first"))">@("<<")</button>
+                    <button class="btn btn-dark" @onclick="@(e => NavigateTo("prev"))" disabled="@(CurrentPage == 0)" style="margin-left: 5px;">Prev</button>
+                    @for (int i = 0; i <= TotalPages; i++)
+                    {
+                        var pageNumber = i;
+                        <button class="btn @(CurrentPage == pageNumber? "btn-dark":"btn-outline-secondary")" @onclick="@(e => UpdateList(pageNumber))" style="margin: 0 5px;">@(i + 1)</button>
+
+                    }
+                    <button class="btn btn-dark" @onclick="@(e => NavigateTo("next"))" disabled="@(CurrentPage == TotalPages)" style="margin: 0 5px;">Next</button>
+                    <button class="btn btn-dark" @onclick="@(e => NavigateTo("last"))">@(">>")</button>
+
+                </div>
+
+            </div>
+
+        </div>
+    }
 }
-else
+@*Dialog to add a customer*@
+<MatDialog @bind-IsOpen="@dialogIsOpen">
+    <MatDialogContent Style="background-color:lightblue; color:white;">
+        <AddCustomers DialogueToAddCustomer="DialogueToClose" />
+    </MatDialogContent>
+</MatDialog>
+
+@if (dialogForSearchIsOpen)
 {
-     <div class="row">
+    <div style="padding: 3% 11%">
+        <div class="close-button-container" style="padding-bottom:2rem;">
+            <button type="button" class="close-button" @onclick="closeTheListAndDisplayCards" style="color: red; float: left;">X</button>
+        </div>
         <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="12" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Center" ShowPagingSummary="true"
-                        Data="@customers" TItem="CustomerView" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or" RowClick="@(args => NavigateToCustomerDetail(args.Data.CustomerId))">
+        Data="@customers" TItem="CustomerView" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or" RowClick="@(args => NavigateToCustomerDetail(args.Data.CustomerId))">
             <Columns>
                 <RadzenDataGridColumn TItem="CustomerView" Property="CustomerId" Filterable="false" Title="ID" Frozen="true" Width="80px" TextAlign="TextAlign.Center" />
                 <RadzenDataGridColumn TItem="CustomerView" Title="Photo" Frozen="true" Sortable="false" Filterable="false" Width="80px" TextAlign="TextAlign.Center">
@@ -46,184 +109,8 @@ else
                 <RadzenDataGridColumn TItem="CustomerView" Property="NumberOfDogs" Title="# Dogs" Width="90px" />
             </Columns>
         </RadzenDataGrid>
-     </div>
-   @*  <div class="customer-container">
-        <div class="row">
-            @foreach (var customer in customersList)
-            {
-
-                <div class="col-md-4 mb-4">
-                    <div class="card" @onclick="() => NavigateToCustomerDetail(customer.CustomerId)">
-                        <div class="card-body">
-                            <h7 class="customer-name">@customer.FirstName @customer.LastName</h7>
-                            <ul class="customer-details list-unstyled">
-                                <li><strong>Address:</strong> @customer.Address</li>
-                                <li><strong>City:</strong> @customer.City</li>
-                                 <li><strong>State:</strong> @customer.State</li>
-                        <li><strong>Zip:</strong> @customer.Zip</li>
-                                <li><strong>Phone:</strong> @customer.PhoneNumber1</li>
-                                <li><strong>Email:</strong> @customer.EmailAddress</li>
-                                <li><strong># Number of Dogs:</strong> @customer.NumberOfDogs</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            <div class="socials">
-                                <a href="https://www.facebook.com/" target="_blank">
-                                    <RadzenIcon Icon="facebook" style="color: #316FF6;" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
-            <div class="paginationContainer">
-                <button class="btn btn-dark" @onclick="@(e => NavigateTo("first"))">@("<<")</button>
-                <button class="btn btn-dark" @onclick="@(e => NavigateTo("prev"))" disabled="@(CurrentPage == 0)" style="margin-left: 5px;">Prev</button>
-                @for (int i = 0; i <= TotalPages; i++)
-                {
-                    var pageNumber = i;
-                    <button class="btn @(CurrentPage == pageNumber? "btn-dark":"btn-outline-secondary")" @onclick="@(e => UpdateList(pageNumber))" style="margin: 0 5px;">@(i + 1)</button>
-
-                }
-                <button class="btn btn-dark" @onclick="@(e => NavigateTo("next"))" disabled="@(CurrentPage == TotalPages)" style="margin: 0 5px;">Next</button>
-                <button class="btn btn-dark" @onclick="@(e => NavigateTo("last"))">@(">>")</button>
-
-            </div>
-
-        </div>
-
-    </div> *@
+    </div>
 }
-@*Dialog to add a customer*@
-<MatDialog @bind-IsOpen="@dialogIsOpen">
-    <MatDialogContent Style="background-color:lightblue; color:white;">
-        <AddCustomers DialogueToAddCustomer="DialogueToClose" />
-    </MatDialogContent>
-</MatDialog>
-
-@*Dial to search for a customer*@
-<MatDialog @bind-IsOpen="@dialogToSearchIsOpen">
-    <MatDialogContent Style="background-color:lightblue; color:white;">
-
-        <EditForm Model="@customer" OnValidSubmit="@FilterCustomer" class="light-gray-background">
-            
-            <div class="close-button-container">
-                <button type="button" class="close-button" @onclick="CloseForm" style="color: red; float: right;">X</button>
-            </div>
-            <div class="container">
-                <h3 style="color:black;">Customer ID</h3>
-                <div class="form-group">
-                    <label for="FirstName">First Name</label>
-                    <input type="text" class="form-control" id="FirstName" placeholder="ID" @bind="customerId" @oninput="HandleIdInput">
-
-                </div>
-                <div class="flex">
-                    <div class="form-group">
-                        <label for="FirstName">First Name</label>
-                        <input type="text" class="form-control" id="FirstName" placeholder="Enter first name" @bind="firstName" @oninput="HandleFirstNameInput" />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="LastName">Last Name</label>
-                        <input type="text" class="form-control" id="LastName" placeholder="Enter last name" @bind="lastName" @oninput="HandleLastNameInput">
-                       
-                    </div>
-
-                </div>
-                <div class="flex">
-                    <div class="form-group">
-                        <label for="EmailAddress">Email</label>
-                        <input type="email" class="form-control" id="EmailAddress" placeholder="Enter email" @bind="emailAddress" @oninput="HandleEmailInput">
-                    
-                    </div>
-                    <div class="form-group">
-                        <label for="EnrollmentDate">Enrollment Date</label>
-                        <input type="date" class="form-control" id="EnrollmentDate" @bind="enrollmentDate">
-                       
-                    </div>
-                </div>
-                <div class="flex">
-                    <div class="form-group">
-                        <label for="Referral">Referral source</label>
-                        <select class="form-select form-control col-3" @bind="referral" @oninput="HandleReferralInput">
-                            <option value="">Referral source...</option>
-                            @foreach (var referral in Refferals)
-                            {
-                                <option value="@referral">@referral</option>
-                            }
-                        </select>
-
-                    
-
-                    </div>
-
-                    <div class="form-group">
-                        <label for="Zip">Postal Code</label>
-                        <input type="text" class="form-control" id="Zip" placeholder="Enter Postal Code" @bind="zip">
-                    </div>
-                </div>
-
-                <div class="flex2">
-                    <div class="form-group">
-                        <label for="Address">Address</label>
-                        <input type="text" class="form-control" id="Address" placeholder="Enter address" @bind="address">
-                      
-                    </div>
-                    <div class="form-group">
-                        <label for="City">City</label>
-                        <select class="form-select form-control col-3" @oninput="GetState" @bind="city">
-                            <option value="">City...</option>
-                            @foreach (var city in Cities)
-                            {
-                                <option value="@city">@city</option>
-                            }
-                        </select>
-                   
-                    </div>
-                    <div class="form-group">
-                        <label for="State">Province</label>
-                        <input type="text" class="form-control" id="State" placeholder="Enter Province" @bind="state">
-                        @* <input type="text" class="form-control" id="State" placeholder="State" value="@customer.State" disabled> *@
-                      
-
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="PhoneNumber1">Phone Number 1</label>
-                    <input type="text" class="form-control" id="PhoneNumber1" placeholder="Enter phone number 1" @bind="phoneNumber">
-                  
-                </div>
-                @* <div class="form-group">
-                    <label for="PhoneNumber2">Phone Number 2</label>
-                    <input type="text" class="form-control" id="PhoneNumber2" placeholder="Enter phone number 2" @bind="customer.PhoneNumber2">
-                  
-                </div>
-                <div class="form-group">
-                    <label for="PhoneNumber3">Phone Number 3</label>
-                    <input type="text" class="form-control" id="PhoneNumber3" placeholder="Enter phone number 3" @bind="customer.PhoneNumber3">
-                </div>
-
-
-                <div class="form-group">
-                    <label for="Notes">Notes</label>
-                    <textarea class="form-control" id="Notes" rows="4" placeholder="Enter notes" @bind="customer.Notes"></textarea>
-                </div>
- *@
-                <div class="buttonContainer">
-                    <button type="submit" class="btn btn-success" @onclick="CloseSearchForm">Submit</button>
-                    <button type="reset" class="btn btn-secondary" @onclick="ClearFieldsForSearchForm">Clear</button>
-                </div>
-            </div>
-
-        </EditForm>
-
-
-
-
-        
-    </MatDialogContent>
-</MatDialog>
 
 @code {
 
@@ -239,6 +126,8 @@ else
     protected bool showTable { get; set; } = true;
     protected bool isLoading { get; set; } = false;
     protected bool dialogIsOpen { get; set; } = false;
+    protected bool dialogForSearchIsOpen { get; set; } = false;
+    protected bool displayCards { get; set; } = true;
     protected bool dialogToSearchIsOpen { get; set; } = false;
     public int PageSize { get; set; }//for pagination
     public int TotalPages { get; set; }//for pagination}
@@ -345,6 +234,20 @@ else
     private void OpenSearchForm()
     {
         dialogToSearchIsOpen = true;
+    }
+
+    //Display the search form when the search button is clicked
+    private void DisplaySearchForm()
+    {
+        dialogForSearchIsOpen = true;
+        displayCards = false;
+    }
+
+    //Close the search form and display the cards
+    private void closeTheListAndDisplayCards()
+    {
+        dialogForSearchIsOpen = false;
+        displayCards = true;
     }
 
     //Search Customer
