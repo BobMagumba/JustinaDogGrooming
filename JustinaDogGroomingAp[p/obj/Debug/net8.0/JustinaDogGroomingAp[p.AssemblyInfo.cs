@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JustinaDogGroomingAp[p")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+841dd6d3c1f9285dc4ad20c6ff8f5570aeb3fbe6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+61a5dc89e922ee5c964efcae7b581a752f860436")]
 [assembly: System.Reflection.AssemblyProductAttribute("JustinaDogGroomingAp[p")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JustinaDogGroomingAp[p")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
