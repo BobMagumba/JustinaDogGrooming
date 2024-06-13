@@ -34,10 +34,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/cloned2/JustinaDogGrooming/JustinaDogGroomingAp\[p/Pages/JustinaPages/Christmas.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVzdGluYVBhZ2VzXENocmlzdG1hcy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/cloned2/JustinaDogGrooming/JustinaDogGroomingAp\[p/Pages/JustinaPages/DeleteCustomer.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVzdGluYVBhZ2VzXERlbGV0ZUN1c3RvbWVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/cloned2/JustinaDogGrooming/JustinaDogGroomingAp\[p/Pages/JustinaPages/GroomerDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVzdGluYVBhZ2VzXEdyb29tZXJEZXRhaWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/cloned2/JustinaDogGrooming/JustinaDogGroomingAp\[p/Pages/JustinaPages/Message.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVzdGluYVBhZ2VzXE1lc3NhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/bmagu/OneDrive/Desktop/Projects/Bobstar_pro/cloned2/JustinaDogGrooming/JustinaDogGroomingAp\[p/Shared/LoginDisplay.razor]

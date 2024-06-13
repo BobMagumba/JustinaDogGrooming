@@ -18,6 +18,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+//caching
+builder.Services.AddMemoryCache();
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 // code retrieves connection string fro appsettings.json

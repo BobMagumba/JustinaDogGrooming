@@ -2,6 +2,7 @@
 using JustinaSystem.DAL;
 using JustinaSystem.Entities;
 using JustinaSystem.ViewModels;
+using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,12 @@ namespace JustinaSystem.BLL
 {
     public class JustinaServices
     {
+        private readonly IMemoryCache _memorycache;
+        public JustinaServices(IMemoryCache memoryCache)
+        {
+            _memorycache = memoryCache;
+
+        }
         #region Fields
         private readonly JustinaContext _justinaContext;
         #endregion
@@ -104,85 +111,176 @@ namespace JustinaSystem.BLL
         }
 
         //Get all customers
+        //public List<CustomerView> ViewCustomerWithCustomerObject(CustomerView customer)
+        //{
+        //    IQueryable<Customer> query = _justinaContext.Customers;
+
+        //    if (customer.CustomerId > 0)
+        //    {
+        //        query = query.Where(x => x.customer_id == customer.CustomerId);
+        //    }
+        //    if (!string.IsNullOrWhiteSpace(customer.FirstName))
+        //    {
+        //        query = query.Where(x => x.first_name.Contains(customer.FirstName));
+        //    }
+        //    if (!string.IsNullOrWhiteSpace(customer.LastName))
+        //    {
+        //        query = query.Where(x => x.last_name.Contains(customer.LastName));
+        //    }
+        //    if (!string.IsNullOrWhiteSpace(customer.PhoneNumber1) ||
+        //        !string.IsNullOrWhiteSpace(customer.PhoneNumber2) ||
+        //        !string.IsNullOrWhiteSpace(customer.PhoneNumber3))
+        //    {
+        //        query = query.Where(x =>
+        //            x.phone_number1.Contains(customer.PhoneNumber1) ||
+        //            x.phone_number2.Contains(customer.PhoneNumber2) ||
+        //            x.phone_number3.Contains(customer.PhoneNumber3));
+        //    }
+        //    if (!string.IsNullOrWhiteSpace(customer.EmailAddress))
+        //    {
+        //        query = query.Where(x => x.email_address.Contains(customer.EmailAddress));
+        //    }
+        //    if (customer.EnrollmentDate != null)
+        //    {
+        //        query = query.Where(x => x.enrollment_date == customer.EnrollmentDate);
+        //    }
+        //    if (!string.IsNullOrWhiteSpace(customer.Address))
+        //    {
+        //        query = query.Where(x => x.address.Contains(customer.Address));
+        //    }
+        //    if (!string.IsNullOrWhiteSpace(customer.City))
+        //    {
+        //        query = query.Where(x => x.city.Contains(customer.City));
+        //    }
+        //    if (!string.IsNullOrWhiteSpace(customer.State))
+        //    {
+        //        query = query.Where(x => x.state.Contains(customer.State));
+        //    }
+        //    if (!string.IsNullOrWhiteSpace(customer.Zip))
+        //    {
+        //        query = query.Where(x => x.zip_code.Contains(customer.Zip));
+        //    }
+        //    if (!string.IsNullOrWhiteSpace(customer.Referral))
+        //    {
+        //        query = query.Where(x => x.referral.Contains(customer.Referral));
+        //    }
+
+        //    List<CustomerView> customerList = query.Select(c => new CustomerView
+        //    {
+        //        CustomerId = c.customer_id,
+        //        FirstName = c.first_name,
+        //        LastName = c.last_name,
+        //        PhoneNumber1 = c.phone_number1,
+        //        PhoneNumber2 = c.phone_number2,
+        //        PhoneNumber3 = c.phone_number3,
+        //        EmailAddress = c.email_address,
+        //        EnrollmentDate = (DateTime)c.enrollment_date,
+        //        Address = c.address,
+        //        City = c.city,
+        //        State = c.state,
+        //        Zip = c.zip_code,
+        //        Referral = c.referral,
+        //        Notes = c.notes,
+        //        NumberOfDogs = _justinaContext.Dogs.Where(x => x.customer_id == c.customer_id).Count()
+
+
+
+        //    }).ToList();
+
+        //    return customerList;
+        //}
         public List<CustomerView> ViewCustomerWithCustomerObject(CustomerView customer)
         {
-            IQueryable<Customer> query = _justinaContext.Customers;
+            // Generate a unique cache key based on the input parameters
+            string cacheKey = $"Customer_{customer.CustomerId}_{customer.FirstName}_{customer.LastName}_{customer.PhoneNumber1}_{customer.PhoneNumber2}_{customer.PhoneNumber3}_{customer.EmailAddress}_{customer.EnrollmentDate}_{customer.Address}_{customer.City}_{customer.State}_{customer.Zip}_{customer.Referral}";
 
-            if (customer.CustomerId > 0)
+            // Try to get the result from the cache
+            if (!_memorycache.TryGetValue(cacheKey, out List<CustomerView> customerList))
             {
-                query = query.Where(x => x.customer_id == customer.CustomerId);
-            }
-            if (!string.IsNullOrWhiteSpace(customer.FirstName))
-            {
-                query = query.Where(x => x.first_name.Contains(customer.FirstName));
-            }
-            if (!string.IsNullOrWhiteSpace(customer.LastName))
-            {
-                query = query.Where(x => x.last_name.Contains(customer.LastName));
-            }
-            if (!string.IsNullOrWhiteSpace(customer.PhoneNumber1) ||
-                !string.IsNullOrWhiteSpace(customer.PhoneNumber2) ||
-                !string.IsNullOrWhiteSpace(customer.PhoneNumber3))
-            {
-                query = query.Where(x =>
-                    x.phone_number1.Contains(customer.PhoneNumber1) ||
-                    x.phone_number2.Contains(customer.PhoneNumber2) ||
-                    x.phone_number3.Contains(customer.PhoneNumber3));
-            }
-            if (!string.IsNullOrWhiteSpace(customer.EmailAddress))
-            {
-                query = query.Where(x => x.email_address.Contains(customer.EmailAddress));
-            }
-            if (customer.EnrollmentDate != null)
-            {
-                query = query.Where(x => x.enrollment_date == customer.EnrollmentDate);
-            }
-            if (!string.IsNullOrWhiteSpace(customer.Address))
-            {
-                query = query.Where(x => x.address.Contains(customer.Address));
-            }
-            if (!string.IsNullOrWhiteSpace(customer.City))
-            {
-                query = query.Where(x => x.city.Contains(customer.City));
-            }
-            if (!string.IsNullOrWhiteSpace(customer.State))
-            {
-                query = query.Where(x => x.state.Contains(customer.State));
-            }
-            if (!string.IsNullOrWhiteSpace(customer.Zip))
-            {
-                query = query.Where(x => x.zip_code.Contains(customer.Zip));
-            }
-            if (!string.IsNullOrWhiteSpace(customer.Referral))
-            {
-                query = query.Where(x => x.referral.Contains(customer.Referral));
-            }
+                IQueryable<Customer> query = _justinaContext.Customers;
 
-            List<CustomerView> customerList = query.Select(c => new CustomerView
-            {
-                CustomerId = c.customer_id,
-                FirstName = c.first_name,
-                LastName = c.last_name,
-                PhoneNumber1 = c.phone_number1,
-                PhoneNumber2 = c.phone_number2,
-                PhoneNumber3 = c.phone_number3,
-                EmailAddress = c.email_address,
-                EnrollmentDate = (DateTime)c.enrollment_date,
-                Address = c.address,
-                City = c.city,
-                State = c.state,
-                Zip = c.zip_code,
-                Referral = c.referral,
-                Notes = c.notes,
-                NumberOfDogs = _justinaContext.Dogs.Where(x => x.customer_id == c.customer_id).Count()
+                if (customer.CustomerId > 0)
+                {
+                    query = query.Where(x => x.customer_id == customer.CustomerId);
+                }
+                if (!string.IsNullOrWhiteSpace(customer.FirstName))
+                {
+                    query = query.Where(x => x.first_name.Contains(customer.FirstName));
+                }
+                if (!string.IsNullOrWhiteSpace(customer.LastName))
+                {
+                    query = query.Where(x => x.last_name.Contains(customer.LastName));
+                }
+                if (!string.IsNullOrWhiteSpace(customer.PhoneNumber1) ||
+                    !string.IsNullOrWhiteSpace(customer.PhoneNumber2) ||
+                    !string.IsNullOrWhiteSpace(customer.PhoneNumber3))
+                {
+                    query = query.Where(x =>
+                        x.phone_number1.Contains(customer.PhoneNumber1) ||
+                        x.phone_number2.Contains(customer.PhoneNumber2) ||
+                        x.phone_number3.Contains(customer.PhoneNumber3));
+                }
+                if (!string.IsNullOrWhiteSpace(customer.EmailAddress))
+                {
+                    query = query.Where(x => x.email_address.Contains(customer.EmailAddress));
+                }
+                if (customer.EnrollmentDate != null)
+                {
+                    query = query.Where(x => x.enrollment_date == customer.EnrollmentDate);
+                }
+                if (!string.IsNullOrWhiteSpace(customer.Address))
+                {
+                    query = query.Where(x => x.address.Contains(customer.Address));
+                }
+                if (!string.IsNullOrWhiteSpace(customer.City))
+                {
+                    query = query.Where(x => x.city.Contains(customer.City));
+                }
+                if (!string.IsNullOrWhiteSpace(customer.State))
+                {
+                    query = query.Where(x => x.state.Contains(customer.State));
+                }
+                if (!string.IsNullOrWhiteSpace(customer.Zip))
+                {
+                    query = query.Where(x => x.zip_code.Contains(customer.Zip));
+                }
+                if (!string.IsNullOrWhiteSpace(customer.Referral))
+                {
+                    query = query.Where(x => x.referral.Contains(customer.Referral));
+                }
 
+                customerList = query.Select(c => new CustomerView
+                {
+                    CustomerId = c.customer_id,
+                    FirstName = c.first_name,
+                    LastName = c.last_name,
+                    PhoneNumber1 = c.phone_number1,
+                    PhoneNumber2 = c.phone_number2,
+                    PhoneNumber3 = c.phone_number3,
+                    EmailAddress = c.email_address,
+                    EnrollmentDate = (DateTime)c.enrollment_date,
+                    Address = c.address,
+                    City = c.city,
+                    State = c.state,
+                    Zip = c.zip_code,
+                    Referral = c.referral,
+                    Notes = c.notes,
+                    NumberOfDogs = _justinaContext.Dogs.Count(x => x.customer_id == c.customer_id)
+                }).ToList();
 
+                // Set cache options
+                var cacheEntryOptions = new MemoryCacheEntryOptions
+                {
+                    AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5), // Cache for 5 minutes
+                    SlidingExpiration = TimeSpan.FromMinutes(2) // Reset the expiration time if accessed
+                };
 
-            }).ToList();
+                // Save data in cache
+                _memorycache.Set(cacheKey, customerList, cacheEntryOptions);
+            }
 
             return customerList;
         }
-
 
         //Serach using any of the parameters
         public List<CustomerView> ViewCustomerUsingAntParameters(

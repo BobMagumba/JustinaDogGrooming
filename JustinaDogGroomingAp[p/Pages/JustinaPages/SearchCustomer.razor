@@ -10,7 +10,7 @@
 <PageTitle>Search For Customers</PageTitle>
 
 <div class="page-header">
-    <h1>Bobstar Dog Grooming</h1>
+    <h1>Justina's Dog Grooming</h1>
     <div class="flex-container" style="margin-top:2rem;">
         <div class="customer-container">
             <button class="customer-btn btn btn-outline-light btn-lg text-uppercase" onclick="@DaialogueToOpen">Add Customer</button>
@@ -93,7 +93,7 @@
         <div class="close-button-container" style="padding-bottom:2rem;">
             <button type="button" class="close-button" @onclick="closeTheListAndDisplayCards" style="color: red; float: left;">X</button>
         </div>
-        <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="12" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Center" ShowPagingSummary="true"
+        <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="8" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Center" ShowPagingSummary="true"
         Data="@customers" TItem="CustomerView" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or" RowClick="@(args => NavigateToCustomerDetail(args.Data.CustomerId))">
             <Columns>
                 <RadzenDataGridColumn TItem="CustomerView" Property="CustomerId" Filterable="false" Title="ID" Frozen="true" Width="80px" TextAlign="TextAlign.Center" />
@@ -106,7 +106,9 @@
                 <RadzenDataGridColumn TItem="CustomerView" Property="EnrollmentDate" Title="Reg date" Width="90px" />
                 <RadzenDataGridColumn TItem="CustomerView" Property="Address" Title="Address" Width="120px" />
                 <RadzenDataGridColumn TItem="CustomerView" Property="City" Title="City" Width="120px" />
-                <RadzenDataGridColumn TItem="CustomerView" Property="NumberOfDogs" Title="# Dogs" Width="90px" />
+                <RadzenDataGridColumn TItem="CustomerView" Property="NumberOfDogs" Title="# Dogs" Width="100px" />
+                <RadzenDataGridColumn TItem="CustomerView" Property="ReferralSource" Title="Referral Source" Width="120px" />
+                <RadzenDataGridColumn TItem="CustomerView" Property="Province" Title="Province" Width="120px" />
             </Columns>
         </RadzenDataGrid>
     </div>
